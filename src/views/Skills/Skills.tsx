@@ -1,21 +1,32 @@
 import { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import { SkillsProps } from './types';
 import HeroSection from '@/components/organisms/HeroSection';
 import SectionHeader from '@/components/molecules/SectionHeader';
 import InfoSection from '@/components/molecules/InfoSection';
 import TechIconsRotator from '@/components/molecules/TechIconsRotator';
-import { 
-  FaReact, FaNodeJs, FaJava, FaDocker, FaGitAlt, FaAws,
-  FaJs, FaVuejs
-} from 'react-icons/fa';
-import { 
-  SiTypescript, SiExpress, SiNextdotjs, SiSpringboot,
-  SiMongodb, SiMysql, SiTailwindcss, SiStyledcomponents,
-  SiBootstrap, SiMui, SiStripe, SiDotnet,
-  SiAmazon, SiAuth0
-} from 'react-icons/si';
+import {
+  FaReact,
+  FaNodeJs,
+  FaJava,
+  FaDocker,
+  FaAws,
+  FaJs,
+  FaVuejs,
+} from "react-icons/fa"
+import {
+  SiTypescript,
+  SiExpress,
+  SiNextdotjs,
+  SiSpringboot,
+  SiMongodb,
+  SiMysql,
+  SiTailwindcss,
+  SiDotnet,
+  SiAmazon,
+  SiAuth0,
+} from "react-icons/si"
 
 // Define a mapping function for skill icons
 const getSkillIcon = (skillName: string) => {
