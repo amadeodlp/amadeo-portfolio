@@ -1,0 +1,36 @@
+# Installation Instructions for react-icons
+
+To complete the implementation of technology icons in the Projects.tsx file, please follow these steps:
+
+1. Open a terminal window
+
+2. Navigate to your project directory:
+   ```
+   cd D:/amadeo-portfolio
+   ```
+
+3. Install the react-icons package:
+   ```
+   npm install react-icons --save
+   ```
+
+4. After the installation completes, start your development server (if not already running):
+   ```
+   npm run dev
+   ```
+
+5. Your Projects page should now display technology icons instead of just the first letter of each technology.
+
+## What was changed?
+
+1. Added imports for various icons from react-icons/fa and react-icons/si
+2. Created a function called `getTechIcon` that maps technology names to their corresponding icons
+3. Updated the technologies section in the Projects page to display the icons
+4. Updated the technology tags in project cards to include icons
+
+If you encounter any issues, ensure that:
+- The react-icons package installed successfully
+- You've refreshed your browser after the changes
+- There are no TypeScript errors in your console
+
+The icons are colored to match their official brand colors where possible, enhancing the visual appeal of your portfolio.
