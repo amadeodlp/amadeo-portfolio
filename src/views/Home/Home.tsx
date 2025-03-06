@@ -55,13 +55,13 @@ const Home: React.FC<HomeProps> = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden z-5">
         {/* Animated Background with primary and secondary images */}
-        <AnimatedBackground 
+        <AnimatedBackground
           images={primaryBackgrounds}
           secondaryImages={secondaryBackgrounds}
           currentImageIndex={currentBgIndex}
           isTransitioning={isTransitioning}
         />
-        
+
         {/* Hero Content */}
         <div className="container mx-auto px-4 relative z-10 text-right">
           <motion.div
@@ -70,23 +70,21 @@ const Home: React.FC<HomeProps> = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white py-20">
-              <span className="block">A GOOD DEVELOPER</span>
-              <span className="block">SHOULD BE SKILLED,</span>
-              <span className="block">CREATIVE</span>
-              <span className="block">AND TASTEFUL</span>
+              <span className="block">IF YOU CAN THINK OF IT,</span>
+              <span className="block">I CAN MAKE IT REAL</span>
             </h1>
-            
+
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto text-right">
               I'm Amadeo de la Peña, software developer based in Argentina.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link 
-                  to="/projects" 
+                <Link
+                  to="/projects"
                   className="bg-[#653490] text-white px-8 py-3 rounded-md hover:bg-[#7e4aaa] transition-all duration-300 inline-block shadow-lg shadow-[#653490]/30 hover:shadow-xl"
                 >
                   See projects
@@ -96,8 +94,8 @@ const Home: React.FC<HomeProps> = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link 
-                  to="/contact" 
+                <Link
+                  to="/contact"
                   className="bg-transparent border border-white/30 text-white px-8 py-3 rounded-md hover:bg-white/10 transition-all duration-300 inline-block hover:border-white/70 backdrop-blur-sm"
                 >
                   Contact
@@ -106,42 +104,44 @@ const Home: React.FC<HomeProps> = () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Scroll indicator - hidden on mobile */}
         {showScrollIndicator && (
-          <motion.div 
+          <motion.div
             className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center z-20 hidden md:flex"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            <span className="text-white/80 text-sm mb-2 drop-shadow-md font-light tracking-wider">Scroll Down</span>
+            <span className="text-white/80 text-sm mb-2 drop-shadow-md font-light tracking-wider">
+              Scroll Down
+            </span>
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, 8, 0],
                 opacity: [0.6, 1, 0.6],
-                scale: [1, 1.1, 1]
+                scale: [1, 1.1, 1],
               }}
-              transition={{ 
+              transition={{
                 duration: 2,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
               className="bg-white/10 backdrop-blur-sm p-2 rounded-full shadow-lg"
             >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="text-white drop-shadow-md"
               >
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
+                <path d="M12 5v14M19 12l-7 7-7-7" />
               </svg>
             </motion.div>
           </motion.div>
@@ -153,44 +153,71 @@ const Home: React.FC<HomeProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-            I'm a seasoned software developer, and I can say I have worked across almost everything. From designing robust backend systems to crafting intuitive front-end interfaces, I’ve built solutions that are both scalable and efficient. My technical expertise spans across multiple languages, frameworks, and platforms, enabling me to tackle any challenge with confidence. I focus on quality, performance, and user experience, delivering results that speak for themselves. When it comes to software development, I don’t just follow industry standards—I set them.
+              I'm a seasoned software developer, and I can say I have worked
+              across almost everything. From designing robust backend systems to
+              crafting intuitive front-end interfaces, I’ve built solutions that
+              are both scalable and efficient. My technical expertise spans
+              across multiple languages, frameworks, and platforms, enabling me
+              to tackle any challenge with confidence. I focus on quality,
+              performance, and user experience, delivering results that speak
+              for themselves. When it comes to software development, I don’t
+              just follow industry standards—I set them.
             </InfoSection>
           </div>
-          
+
           <SectionHeader title="ABOUT ME" color="cyan" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-4 text-white">Who am I?</h3>
               <p className="text-white/80 mb-4">
-              I am a passionate software developer specializing in building modern web applications with a focus on clean code, performance, and user experience
+                I am a passionate software developer specializing in building
+                modern web applications with a focus on clean code, performance,
+                and user experience
               </p>
               <p className="text-white/80 mb-6">
-              Ever since I wrote my first lines of code, I’ve been fascinated by the power of technology to bring ideas to life. What started as curiosity quickly turned into a passion for building modern web applications that are not only functional but also intuitive and enjoyable to use.
-
-Over the years, I’ve honed my skills in technologies like React, TypeScript, Node.js, and Spring Boot, always striving to write clean, efficient, and scalable code. I love exploring new frameworks and tools, constantly learning and refining my approach to software development. I also have experience working with AWS, leveraging cloud services to build scalable and reliable applications.              </p>
-              <Link 
-                to="/about" 
+                Ever since I wrote my first lines of code, I’ve been fascinated
+                by the power of technology to bring ideas to life. What started
+                as curiosity quickly turned into a passion for building modern
+                web applications that are not only functional but also intuitive
+                and enjoyable to use. Over the years, I’ve honed my skills in
+                technologies like React, TypeScript, Node.js, and Spring Boot,
+                always striving to write clean, efficient, and scalable code. I
+                love exploring new frameworks and tools, constantly learning and
+                refining my approach to software development. I also have
+                experience working with AWS, leveraging cloud services to build
+                scalable and reliable applications.{" "}
+              </p>
+              <Link
+                to="/about"
                 className="inline-flex items-center text-[#00E9C5] hover:underline group transition-all duration-300"
               >
-                <span className="group-hover:mr-1 transition-all duration-300">Know more</span>
-                <motion.svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 ml-1 group-hover:ml-2 transition-all duration-300" 
-                  viewBox="0 0 20 20" 
+                <span className="group-hover:mr-1 transition-all duration-300">
+                  Know more
+                </span>
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-1 group-hover:ml-2 transition-all duration-300"
+                  viewBox="0 0 20 20"
                   fill="currentColor"
                   whileHover={{ x: 3 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </motion.svg>
               </Link>
             </div>
-            
+
             <div>
               <div className="bg-dark-light/80 p-6 rounded-lg h-full shadow-lg backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-white">Main coding languages I use</h3>
-                
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  Main coding languages I use
+                </h3>
+
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between mb-1">
@@ -198,59 +225,77 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
                       <span className="text-white/60">90%</span>
                     </div>
                     <div className="w-full h-2 bg-dark/80 rounded-full overflow-hidden shadow-inner">
-                      <motion.div 
-                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]" 
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
                         initial={{ width: 0 }}
-                        animate={{ width: '90%' }}
-                        transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+                        animate={{ width: "90%" }}
+                        transition={{
+                          duration: 1.5,
+                          delay: 0.2,
+                          ease: "easeOut",
+                        }}
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className="text-white">Java</span>
                       <span className="text-white/60">85%</span>
                     </div>
                     <div className="w-full h-2 bg-dark/80 rounded-full overflow-hidden shadow-inner">
-                      <motion.div 
-                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]" 
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
                         initial={{ width: 0 }}
-                        animate={{ width: '85%' }}
-                        transition={{ duration: 1.5, delay: 0.4, ease: "easeOut" }}
+                        animate={{ width: "85%" }}
+                        transition={{
+                          duration: 1.5,
+                          delay: 0.4,
+                          ease: "easeOut",
+                        }}
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className="text-white">C#</span>
                       <span className="text-white/60">80%</span>
                     </div>
                     <div className="w-full h-2 bg-dark/80 rounded-full overflow-hidden shadow-inner">
-                      <motion.div 
-                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]" 
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
                         initial={{ width: 0 }}
-                        animate={{ width: '80%' }}
-                        transition={{ duration: 1.5, delay: 0.6, ease: "easeOut" }}
+                        animate={{ width: "80%" }}
+                        transition={{
+                          duration: 1.5,
+                          delay: 0.6,
+                          ease: "easeOut",
+                        }}
                       />
                     </div>
                   </div>
-                  
-                  <Link 
-                    to="/skills" 
+
+                  <Link
+                    to="/skills"
                     className="inline-flex items-center text-[#00E9C5] hover:underline mt-4 block group transition-all duration-300"
                   >
-                    <span className="group-hover:mr-1 transition-all duration-300">See All My Tech Stack</span>
-                    <motion.svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 ml-1 group-hover:ml-2 transition-all duration-300" 
-                      viewBox="0 0 20 20" 
+                    <span className="group-hover:mr-1 transition-all duration-300">
+                      See All My Tech Stack
+                    </span>
+                    <motion.svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 ml-1 group-hover:ml-2 transition-all duration-300"
+                      viewBox="0 0 20 20"
                       fill="currentColor"
                       whileHover={{ x: 3 }}
                       transition={{ type: "spring", stiffness: 400 }}
                     >
-                      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      <path
+                        fillRule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
                     </motion.svg>
                   </Link>
                 </div>
@@ -264,19 +309,23 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
       <section className="bg-dark-light py-20 relative z-10">
         <div className="container mx-auto px-4">
           <SectionHeader title="PROJECTS" color="purple" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {/* Project 1 */}
-            <motion.div 
+            <motion.div
               className="bg-dark/80 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="aspect-video bg-gradient-to-br from-[#653490] to-[#00E9C5] relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold"
                   animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   AS
                 </motion.div>
@@ -290,36 +339,51 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
-                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">Next.js</span>
-                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">TypeScript</span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      Next.js
+                    </span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      TypeScript
+                    </span>
                   </div>
-                  <motion.a 
-                    href="https://github.com/amadeodlp/amastore" 
-                    target="_blank" 
+                  <motion.a
+                    href="https://github.com/amadeodlp/amastore"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 hover:text-white transition-colors"
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                   </motion.a>
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Project 2 */}
-            <motion.div 
+            <motion.div
               className="bg-dark/80 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="aspect-video bg-gradient-to-bl from-[#00E9C5] to-[#653490] relative overflow-hidden group-hover:from-[#39ffda] group-hover:to-[#7d42ab] transition-all duration-500">
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold"
                   animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                  }}
                 >
                   CR
                 </motion.div>
@@ -333,36 +397,51 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
-                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">React</span>
-                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">TypeScript</span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      React
+                    </span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      TypeScript
+                    </span>
                   </div>
-                  <motion.a 
-                    href="https://github.com/amadeodlp/canalradionov-ui" 
-                    target="_blank" 
+                  <motion.a
+                    href="https://github.com/amadeodlp/canalradionov-ui"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 hover:text-white transition-colors"
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                   </motion.a>
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Project 3 */}
-            <motion.div 
+            <motion.div
               className="bg-dark/80 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="aspect-video bg-gradient-to-tr from-[#653490] to-[#00E9C5] relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
-                <motion.div 
+                <motion.div
                   className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold"
                   animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2,
+                  }}
                 >
                   SE
                 </motion.div>
@@ -376,26 +455,36 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
-                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">React</span>
-                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">Bootstrap</span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      React
+                    </span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      Bootstrap
+                    </span>
                   </div>
-                  <motion.a 
-                    href="https://github.com/amadeodlp/space-exploration" 
-                    target="_blank" 
+                  <motion.a
+                    href="https://github.com/amadeodlp/space-exploration"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 hover:text-white transition-colors"
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                     </svg>
                   </motion.a>
                 </div>
               </div>
             </motion.div>
           </div>
-          
+
           <div className="text-center">
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -407,16 +496,25 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
                 className="inline-flex items-center bg-[#653490] text-white px-6 py-3 rounded-md hover:bg-[#7e4aaa] transition-all duration-300 shadow-lg shadow-[#653490]/20 hover:shadow-xl"
               >
                 see All Projects
-                <motion.svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-5 w-5 ml-2" 
-                  viewBox="0 0 20 20" 
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-2"
+                  viewBox="0 0 20 20"
                   fill="currentColor"
                   initial={{ x: 0 }}
                   animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop", ease: "easeInOut" }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    ease: "easeInOut",
+                  }}
                 >
-                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
                 </motion.svg>
               </Link>
             </motion.div>
@@ -428,10 +526,12 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
       <section className="bg-gradient-to-r from-[#653490] to-[#00E9C5] py-20 relative z-10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            If you can think of it, I can code it
+            AI made us all skilled. Hire your next developer based on his
+            adaptability, intuition and good taste.
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            I'm always open to tech talks and project discussions. Feel free to reach me any time.
+            I'm always open to tech talks and project discussions. Feel free to
+            reach me any time.
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -448,7 +548,7 @@ Over the years, I’ve honed my skills in technologies like React, TypeScript, N
         </div>
       </section>
     </>
-  );
+  )
 };
 
 export default Home;
