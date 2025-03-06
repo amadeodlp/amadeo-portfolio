@@ -58,7 +58,6 @@ A modern portfolio website for Amadeo de la Peña, built with React, TypeScript,
 ├── public/             # Static assets
 │   └── images/         # Images used in the site
 ├── src/
-│   ├── assets/         # Additional assets 
 │   ├── components/     # Reusable UI components
 │   │   ├── atoms/      # Base components
 │   │   ├── molecules/  # Composite components
