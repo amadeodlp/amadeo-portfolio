@@ -157,19 +157,25 @@ const Skills: React.FC<SkillsProps> = () => {
         description={
           <div className="mt-4 bg-black/70 backdrop-blur-sm p-4 rounded-lg">
             <p className="text-white/90">
-            I'm a flexible developer who can handle just about anything! Whether it's creating smooth front-end experiences with React, Vue, Next.js, or Tailwind, or building solid back-end systems with Spring Boot, .NET, Node/Express, and AWS, I've got it covered. I'm all about clean design with atomic principles and BEM, and I have already dived deep in AI world. Whatever the project, I'm ready to roll up my sleeves and make it happen!
+              I'm a flexible developer who can handle just about anything!
+              Whether it's creating smooth front-end experiences with React,
+              Vue, Next.js, or Tailwind, or building solid back-end systems with
+              Spring Boot, .NET, Node/Express, and AWS, I've got it covered. I'm
+              all about clean design with atomic principles and BEM, and I have
+              already dived deep in AI world. Whatever the project, I'm ready to
+              roll up my sleeves and make it happen!
             </p>
           </div>
         }
         contactForm={
           <div className="hidden md:block">
-          <TechIconsRotator 
-            icons={techIconsList} 
-            size="medium" 
-            shadow={true}
-            transitionInterval={2000}
-          />
-        </div>
+            <TechIconsRotator
+              icons={techIconsList}
+              size="medium"
+              shadow={true}
+              transitionInterval={2000}
+            />
+          </div>
         }
       />
 
@@ -177,11 +183,14 @@ const Skills: React.FC<SkillsProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-              In my professional journey, I've developed a strong technical skillset allowing me to
-              work across various domains including: Frontend, Backend, Mobile, Cloud, DevOps and more.
-              Below you'll find a detailed overview of my technical capabilities and expertise with various
-              technologies such as React, TypeScript, Java, Spring Boot, AWS, and more. My commitment to
-              continuous learning ensures I stay current with emerging technologies and best practices.
+              In my professional journey, I've developed a strong technical
+              skillset allowing me to work across various domains including:
+              Frontend, Backend, Mobile, Cloud, DevOps and more. Below you'll
+              find a detailed overview of my technical capabilities and
+              expertise with various technologies such as React, TypeScript,
+              Java, Spring Boot, AWS, and more. My commitment to continuous
+              learning ensures I stay current with emerging technologies and
+              best practices.
             </InfoSection>
           </div>
 
@@ -189,16 +198,16 @@ const Skills: React.FC<SkillsProps> = () => {
             <SectionHeader title="TECHNICAL" color="cyan" />
           </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {skillCategories.map((category, index) => (
               <div
                 key={index}
                 className="bg-dark-light p-6 rounded-lg shadow-lg"
               >
-                <h3 className="text-2xl font-bold mb-6 text-white">{category.name}</h3>
-                
+                <h3 className="text-2xl font-bold mb-6 text-white">
+                  {category.name}
+                </h3>
+
                 <div className="space-y-5">
                   {category.skills.map((skill, skillIndex) => (
                     <div key={skillIndex}>
@@ -207,10 +216,12 @@ const Skills: React.FC<SkillsProps> = () => {
                           {getSkillIcon(skill.name)}
                           {skill.name}
                         </span>
-                        <span className="text-white/60 text-sm">{skill.level}%</span>
+                        <span className="text-white/60 text-sm">
+                          {skill.level}%
+                        </span>
                       </div>
                       <div className="w-full h-2 bg-dark rounded-full overflow-hidden">
-                        <div 
+                        <div
                           className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
                           style={{ width: `${skill.level}%` }}
                         ></div>
@@ -227,58 +238,62 @@ const Skills: React.FC<SkillsProps> = () => {
       <section className="bg-dark-light py-20">
         <div className="container mx-auto px-4">
           <SectionHeader title="TRAINING" color="purple" />
-          
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-10"
-          >
-            <div
-              className="bg-dark p-6 rounded-lg shadow-lg"
-            >
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="bg-dark p-6 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-4 text-white">Education</h3>
-              
+
               <div className="space-y-6">
                 <div className="border-l-4 border-[#653490] pl-4">
-                  <p className="text-gray-400 text-sm mb-1">2018 - 2022</p>
-                  <h4 className="text-lg font-semibold text-white mb-1">Computer Science Degree</h4>
-                  <p className="text-white/70">University of Buenos Aires</p>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    Unreal Engine & C++ Course
+                  </h4>
+                  <p className="text-white/70">Udemy</p>
                 </div>
-                
+
                 <div className="border-l-4 border-[#653490] pl-4">
-                  <p className="text-gray-400 text-sm mb-1">2016 - 2018</p>
-                  <h4 className="text-lg font-semibold text-white mb-1">Web Development Bootcamp</h4>
-                  <p className="text-white/70">Digital House</p>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    Web Development Bootcamp
+                  </h4>
+                  <p className="text-white/70">Alkemy Tech</p>
                 </div>
-                
+
                 <div className="border-l-4 border-[#653490] pl-4">
-                  <p className="text-gray-400 text-sm mb-1">2015</p>
-                  <h4 className="text-lg font-semibold text-white mb-1">UX/UI Design Course</h4>
-                  <p className="text-white/70">Coderhouse</p>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    Java & POO
+                  </h4>
+                  <p className="text-white/70">FreeCodeCamp</p>
                 </div>
               </div>
             </div>
-            
-            <div
-              className="bg-dark p-6 rounded-lg shadow-lg"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-white">Certifications</h3>
-              
+
+            <div className="bg-dark p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-white">
+                Achievements
+              </h3>
+
               <div className="space-y-6">
                 <div className="border-l-4 border-[#00E9C5] pl-4">
-                  <p className="text-gray-400 text-sm mb-1">2023</p>
-                  <h4 className="text-lg font-semibold text-white mb-1">AWS Certified Developer</h4>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    AWS Expertise
+                  </h4>
                   <p className="text-white/70">Amazon Web Services</p>
                 </div>
-                
+
                 <div className="border-l-4 border-[#00E9C5] pl-4">
-                  <p className="text-gray-400 text-sm mb-1">2022</p>
-                  <h4 className="text-lg font-semibold text-white mb-1">Professional Scrum Master I</h4>
-                  <p className="text-white/70">Scrum.org</p>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    Expert in Agile methodology
+                  </h4>
+                  <p className="text-white/70">Scrum</p>
                 </div>
-                
+
                 <div className="border-l-4 border-[#00E9C5] pl-4">
-                  <p className="text-gray-400 text-sm mb-1">2021</p>
-                  <h4 className="text-lg font-semibold text-white mb-1">React Developer Certificate</h4>
-                  <p className="text-white/70">Meta</p>
+                  <h4 className="text-lg font-semibold text-white mb-1">
+                    multi-IDE Sailor
+                  </h4>
+                  <p className="text-white/70">
+                    Visual Studio, IntelliJ, Xcode, Android Studio
+                  </p>
                 </div>
               </div>
             </div>
@@ -288,12 +303,15 @@ const Skills: React.FC<SkillsProps> = () => {
 
       <section className="bg-gradient-to-r from-[#653490] to-[#00E9C5] py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Work Together?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            Ready to Work Together?
+          </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            I'm always interested in new challenges and opportunities to apply my skills.
-            Whether you have a project in mind or just want to connect, reach out!
+            I'm always interested in new challenges and opportunities to apply
+            my skills. Whether you have a project in mind or just want to
+            connect, reach out!
           </p>
-          <a 
+          <a
             href="/contact"
             className="inline-block bg-white text-dark font-semibold px-8 py-3 rounded-md transition-all hover:bg-white/90 hover:scale-105"
           >
@@ -302,7 +320,7 @@ const Skills: React.FC<SkillsProps> = () => {
         </div>
       </section>
     </>
-  );
+  )
 };
 
 export default Skills;
