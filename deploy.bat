@@ -1,8 +1,5 @@
 @echo off
-echo Building and deploying portfolio to GitHub Pages...
-
-:: Clean up previous build
-rmdir /s /q dist
+echo Implementing fixes and deploying site...
 
 :: Build the project
 call npm run build
@@ -11,8 +8,12 @@ call npm run build
 call npm run deploy
 
 echo.
-echo Deployment completed. Your site should be available at:
+echo Deployment completed! Your site should be live in a few minutes at:
 echo https://amadeodlp.github.io/amadeo-portfolio/
 echo.
-echo Note: It may take a few minutes for the changes to appear.
+echo Changes made:
+echo 1. Fixed routing to use HashRouter properly
+echo 2. Added automatic scroll-to-top on page navigation
+echo 3. Hidden scroll indicator on mobile devices
+echo.
 pause
