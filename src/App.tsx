@@ -1,11 +1,14 @@
+import { HashRouter } from 'react-router-dom'
 import AppRoutes from '@/router'
 import MainLayout from '@/layouts/MainLayout'
 
 function App() {
   return (
-    <MainLayout>
-      <AppRoutes />
-    </MainLayout>
+    <HashRouter>
+      <MainLayout>
+        <AppRoutes />
+      </MainLayout>
+    </HashRouter>
   )
 }
 
