@@ -72,62 +72,68 @@ const Projects: React.FC<ProjectsProps> = () => {
   // Sample projects data
   const projects: Project[] = [
     {
-      id: 'amastore',
-      title: 'Amadeo Store',
-      description: 'E-commerce application built with TypeScript and Next.js with Stripe integration for payments.',
-      image: '/images/projects/amastore.jpg',
-      technologies: ['Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-      github: 'https://github.com/amadeodlp/amastore',
-      liveDemo: 'https://amastore-sepia.vercel.app',
+      id: "amastore",
+      title: "Amadeo Store",
+      description:
+        "E-commerce application built with TypeScript and Next.js with Stripe integration for payments.",
+      image: "/images/projects/amastore.jpg",
+      technologies: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
+      github: "https://github.com/amadeodlp/amastore",
+      liveDemo: "https://amastore-sepia.vercel.app",
       featured: true,
-      category: 'frontend'
+      category: "frontend",
     },
     {
-      id: 'canalradionov-ui',
-      title: 'Canal Radionov',
-      description: 'User interface for a radio station built with TypeScript and React.',
-      image: '/images/projects/canalradionov.jpg',
-      technologies: ['React', 'TypeScript', 'Styled Components'],
-      github: 'https://github.com/amadeodlp/canalradionov-ui',
-      category: 'frontend'
+      id: "canalradionov-ui",
+      title: "Canal Radionov",
+      description:
+        "User interface for a radio station built with TypeScript and React.",
+      image: "/images/projects/canalradionov.jpg",
+      technologies: ["React", "TypeScript", "Styled Components"],
+      github: "https://github.com/amadeodlp/canalradionov-ui",
+      category: "frontend",
     },
     {
-      id: 'canalradionov-service',
-      title: 'Canal Radionov API',
-      description: 'Backend service for a radio station built with Java and Spring Boot.',
-      image: '/images/projects/canalradionov-api.jpg',
-      technologies: ['Java', 'Spring Boot', 'MySQL'],
-      github: 'https://github.com/amadeodlp/canalradionov-service',
-      category: 'backend'
+      id: "canalradionov-service",
+      title: "Canal Radionov API",
+      description:
+        "Backend service for a radio station built with Java and Spring Boot.",
+      image: "/images/projects/canalradionov-api.jpg",
+      technologies: ["Java", "Spring Boot", "MySQL"],
+      github: "https://github.com/amadeodlp/canalradionov-service",
+      category: "backend",
     },
     {
-      id: 'space-exploration',
-      title: 'Space Exploration',
-      description: 'Space exploration app created with React and Bootstrap.',
-      image: '/images/projects/space-exploration.jpg',
-      technologies: ['React', 'Bootstrap', 'NASA API'],
-      github: 'https://github.com/amadeodlp/space-exploration',
-      category: 'frontend'
+      id: "finance-simplified",
+      title: "Finance Simplified",
+      description:
+        " full-stack DeFi platform combining React/TypeScript frontend, ASP.NET Core backend, and Solidity smart contracts in a unified monorepo architecture.",
+      image: "/images/projects/finance-simplified.jpg",
+      technologies: ["React", "Solidity", "C#"],
+      github: "https://github.com/amadeodlp/finance-simplified",
+      category: "fullstack",
     },
     {
-      id: 'foodprocessor',
-      title: 'Food Processor',
-      description: 'Webhook listener processed through Camel routes. Saves data into DynamoDB and S3.',
-      image: '/images/projects/foodprocessor.jpg',
-      technologies: ['Java', 'Apache Camel', 'AWS DynamoDB', 'AWS S3'],
-      github: 'https://github.com/amadeodlp/foodprocessor',
-      category: 'backend'
+      id: "foodprocessor",
+      title: "Food Processor",
+      description:
+        "Webhook listener processed through Camel routes. Saves data into DynamoDB and S3.",
+      image: "/images/projects/foodprocessor.jpg",
+      technologies: ["Java", "Apache Camel", "AWS DynamoDB", "AWS S3"],
+      github: "https://github.com/amadeodlp/foodprocessor",
+      category: "backend",
     },
     {
-      id: 'nasa-react',
-      title: 'NASA Explorer',
-      description: 'NASA page created with Material UI and Express that consumes NASA APIs.',
-      image: '/images/projects/nasa-explorer.jpg',
-      technologies: ['React', 'Material UI', 'Express', 'NASA API'],
-      github: 'https://github.com/amadeodlp/nasa-react-mui-express',
-      category: 'fullstack'
+      id: "nasa-react",
+      title: "NASA Explorer",
+      description:
+        "NASA page created with Material UI and Express that consumes NASA APIs.",
+      image: "/images/projects/nasa-explorer.jpg",
+      technologies: ["React", "Material UI", "Express", "NASA API"],
+      github: "https://github.com/amadeodlp/nasa-react-mui-express",
+      category: "fullstack",
     },
-  ];
+  ]
 
   const filters = [
     { key: 'all', label: 'All Projects' },
