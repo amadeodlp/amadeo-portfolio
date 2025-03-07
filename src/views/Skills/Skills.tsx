@@ -20,9 +20,10 @@ import {
   SiExpress,
   SiNextdotjs,
   SiSpringboot,
-  SiMongodb,
   SiMysql,
   SiTailwindcss,
+  SiSolidity,
+  SiClaude,
   SiDotnet,
   SiAmazon,
   SiAuth0,
@@ -30,65 +31,151 @@ import {
 
 // Define a mapping function for skill icons
 const getSkillIcon = (skillName: string) => {
-  const iconProps = { className: "mr-2 text-xl" };
-  
-  switch (skillName.toLowerCase().replace(/\s+/g, '')) {
-    case 'react&reactnative':
-      return <FaReact {...iconProps} className={`${iconProps.className} text-[#61DAFB]`} />;
-    case 'typescript':
-      return <SiTypescript {...iconProps} className={`${iconProps.className} text-[#3178C6]`} />;
-    case 'javascript':
-      return <FaJs {...iconProps} className={`${iconProps.className} text-[#F7DF1E]`} />;
-    case 'next.js':
-      return <SiNextdotjs {...iconProps} />;
-    case 'vue&nuxt.js':
-      return <FaVuejs {...iconProps} className={`${iconProps.className} text-[#4FC08D]`} />;
-    case 'tailwindcss':
-      return <SiTailwindcss {...iconProps} className={`${iconProps.className} text-[#38B2AC]`} />;
-    case 'java':
-      return <FaJava {...iconProps} className={`${iconProps.className} text-[#007396]`} />;
-    case 'springboot':
-      return <SiSpringboot {...iconProps} className={`${iconProps.className} text-[#6DB33F]`} />;
-    case '.net':
-      return <SiDotnet {...iconProps} className={`${iconProps.className} text-[#512BD4]`} />;
-    case 'node/express':
-      return <FaNodeJs {...iconProps} className={`${iconProps.className} text-[#8CC84B]`} />;
-    case 'apachecamel':
-      return <FaJava {...iconProps} className={`${iconProps.className} text-[#007396]`} />;
-    case 'awsdynamodb':
-      return <FaAws {...iconProps} className={`${iconProps.className} text-[#FF9900]`} />;
-    case 'awss3':
-      return <FaAws {...iconProps} className={`${iconProps.className} text-[#FF9900]`} />;
-    case 'awsamplify':
-      return <SiAmazon {...iconProps} className={`${iconProps.className} text-[#FF9900]`} />;
-    case 'docker':
-      return <FaDocker {...iconProps} className={`${iconProps.className} text-[#2496ED]`} />;
-    case 'auth0':
-      return <SiAuth0 {...iconProps} />;
+  const iconProps = { className: "mr-2 text-xl" }
+
+  switch (skillName.toLowerCase().replace(/\s+/g, "")) {
+    case "react&reactnative":
+      return (
+        <FaReact
+          {...iconProps}
+          className={`${iconProps.className} text-[#61DAFB]`}
+        />
+      )
+    case "typescript":
+      return (
+        <SiTypescript
+          {...iconProps}
+          className={`${iconProps.className} text-[#3178C6]`}
+        />
+      )
+    case "javascript":
+      return (
+        <FaJs
+          {...iconProps}
+          className={`${iconProps.className} text-[#F7DF1E]`}
+        />
+      )
+    case "next.js":
+      return <SiNextdotjs {...iconProps} />
+    case "vue&nuxt.js":
+      return (
+        <FaVuejs
+          {...iconProps}
+          className={`${iconProps.className} text-[#4FC08D]`}
+        />
+      )
+    case "solidity":
+      return <SiSolidity {...iconProps} />
+    case "claude":
+      return <SiClaude {...iconProps} />
+    case "tailwindcss":
+      return (
+        <SiTailwindcss
+          {...iconProps}
+          className={`${iconProps.className} text-[#38B2AC]`}
+        />
+      )
+    case "java":
+      return (
+        <FaJava
+          {...iconProps}
+          className={`${iconProps.className} text-[#007396]`}
+        />
+      )
+    case "springboot":
+      return (
+        <SiSpringboot
+          {...iconProps}
+          className={`${iconProps.className} text-[#6DB33F]`}
+        />
+      )
+    case ".net":
+      return (
+        <SiDotnet
+          {...iconProps}
+          className={`${iconProps.className} text-[#512BD4]`}
+        />
+      )
+    case "node/express":
+      return (
+        <FaNodeJs
+          {...iconProps}
+          className={`${iconProps.className} text-[#8CC84B]`}
+        />
+      )
+    case "apachecamel":
+      return (
+        <FaJava
+          {...iconProps}
+          className={`${iconProps.className} text-[#007396]`}
+        />
+      )
+    case "awsdynamodb":
+      return (
+        <FaAws
+          {...iconProps}
+          className={`${iconProps.className} text-[#FF9900]`}
+        />
+      )
+    case "awss3":
+      return (
+        <FaAws
+          {...iconProps}
+          className={`${iconProps.className} text-[#FF9900]`}
+        />
+      )
+    case "awsamplify":
+      return (
+        <SiAmazon
+          {...iconProps}
+          className={`${iconProps.className} text-[#FF9900]`}
+        />
+      )
+    case "docker":
+      return (
+        <FaDocker
+          {...iconProps}
+          className={`${iconProps.className} text-[#2496ED]`}
+        />
+      )
+    case "auth0":
+      return <SiAuth0 {...iconProps} />
     default:
-      return null;
+      return null
   }
-};
+}
 
 const Skills: React.FC<SkillsProps> = () => {
-  const controls = useAnimation();
+  const controls = useAnimation()
   const [ref, inView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
-  });
+  })
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible")
     }
-  }, [controls, inView]);
+  }, [controls, inView])
 
   // Array of tech icons for the rotator
   const techIconsList = [
-    FaReact, SiTypescript, FaNodeJs, SiExpress, SiNextdotjs, 
-    FaJava, SiSpringboot, SiDotnet, 
-    SiMongodb, SiMysql, FaAws, FaDocker, SiTailwindcss, SiAuth0
-  ];
+    FaReact,
+    SiTypescript,
+    FaNodeJs,
+    SiExpress,
+    SiNextdotjs,
+    FaJava,
+    SiSpringboot,
+    SiDotnet,
+    SiSolidity,
+    SiClaude,
+    SiMysql,
+    FaAws,
+    FaDocker,
+    SiTailwindcss,
+    SiAuth0,
+  ]
 
   const containerVariants = {
     hidden: { opacity: 1 },
@@ -96,51 +183,53 @@ const Skills: React.FC<SkillsProps> = () => {
       opacity: 1,
       transition: { duration: 0 },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { duration: 0 }
+      transition: { duration: 0 },
     },
-  };
+  }
 
   const skillCategories = [
     {
-      name: 'Frontend Development',
+      name: "Frontend Development",
       skills: [
-        { name: 'React & React Native', level: 95 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'JavaScript', level: 95 },
-        { name: 'Next.js', level: 85 },
-        { name: 'Vue & Nuxt.js', level: 80 },
-        { name: 'Tailwind CSS', level: 90 },
+        { name: "React & React Native", level: 95 },
+        { name: "TypeScript", level: 90 },
+        { name: "JavaScript", level: 95 },
+        { name: "Next.js", level: 85 },
+        { name: "Vue & Nuxt.js", level: 80 },
+        { name: "Tailwind CSS", level: 90 },
       ],
     },
     {
-      name: 'Backend Development',
+      name: "Backend Development",
       skills: [
-        { name: 'Java', level: 80 },
-        { name: 'Spring Boot', level: 75 },
-        { name: 'C#', level: 70 },
-        { name: '.NET', level: 70 },
-        { name: 'Node/Express', level: 85 },
-        { name: 'Apache Camel', level: 75 },
+        { name: "Java", level: 80 },
+        { name: "Spring Boot", level: 75 },
+        { name: "C#", level: 70 },
+        { name: ".NET", level: 70 },
+        { name: "Node/Express", level: 85 },
+        { name: "Apache Camel", level: 75 },
       ],
     },
     {
-      name: 'Cloud & DevOps',
+      name: "Blockchain, Cloud, AI",
       skills: [
-        { name: 'AWS DynamoDB', level: 80 },
-        { name: 'AWS S3', level: 85 },
-        { name: 'AWS Cognito', level: 75 },
-        { name: 'AWS Amplify', level: 70 },
-        { name: 'Docker', level: 70 },
-        { name: 'Auth0', level: 80 },
+        { name: "AWS DynamoDB", level: 80 },
+        { name: "AWS S3", level: 85 },
+        { name: "Solidity", level: 75 },
+        { name: "Claude", level: 75 },
+        { name: "AWS Cognito", level: 75 },
+        { name: "AWS Amplify", level: 70 },
+        { name: "Docker", level: 70 },
+        { name: "Auth0", level: 80 },
       ],
     },
-  ];
+  ]
 
   return (
     <>
@@ -321,6 +410,6 @@ const Skills: React.FC<SkillsProps> = () => {
       </section>
     </>
   )
-};
+}
 
 export default Skills;
