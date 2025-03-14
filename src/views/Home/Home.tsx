@@ -317,7 +317,7 @@ const Home: React.FC<HomeProps> = () => {
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="aspect-video bg-gradient-to-br from-[#653490] to-[#00E9C5] relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
+              <div className="aspect-video bg-gradient-to-tr from-[#653490] to-[#00E9C5] relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
                 <motion.div
                   className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -325,29 +325,33 @@ const Home: React.FC<HomeProps> = () => {
                     duration: 5,
                     repeat: Infinity,
                     ease: "easeInOut",
+                    delay: 2,
                   }}
                 >
-                  AS
+                  SE
                 </motion.div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-[#00E9C5] transition-colors duration-300">
-                  Amadeo Store
+                  COSMOS
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  E-commerce application built with TypeScript and Next.js
+                  React/TypeScript frontend, C# ASP.NET Core backend API, and
+                  Solidity smart contracts on Ethereum to provide a simplified
+                  interface for blockchain-based financial services including
+                  token management, wallet functionality, and staking.
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
-                      Next.js
+                      React
                     </span>
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
-                      TypeScript
+                      Bootstrap
                     </span>
                   </div>
                   <motion.a
-                    href="https://github.com/amadeodlp/amastore"
+                    href="https://github.com/amadeodlp/space-exploration"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 hover:text-white transition-colors"
@@ -367,7 +371,6 @@ const Home: React.FC<HomeProps> = () => {
                 </div>
               </div>
             </motion.div>
-
             {/* Project 2 */}
             <motion.div
               className="bg-dark/80 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300"
@@ -393,7 +396,8 @@ const Home: React.FC<HomeProps> = () => {
                   Canal Radionov
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  Radio station UI built with TypeScript and React
+                  Radio Station web application integrated with a custom API
+                  built in React & Spring Boot
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
@@ -425,14 +429,13 @@ const Home: React.FC<HomeProps> = () => {
                 </div>
               </div>
             </motion.div>
-
             {/* Project 3 */}
             <motion.div
               className="bg-dark/80 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="aspect-video bg-gradient-to-tr from-[#653490] to-[#00E9C5] relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
+              <div className="aspect-video bg-gradient-to-br from-[#653490] to-[#00E9C5] relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
                 <motion.div
                   className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -440,30 +443,29 @@ const Home: React.FC<HomeProps> = () => {
                     duration: 5,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 2,
                   }}
                 >
-                  SE
+                  AS
                 </motion.div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-[#00E9C5] transition-colors duration-300">
-                  Space Exploration
+                  Amadeo Store
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  NASA API explorer with React and Bootstrap
+                  E-commerce application built with TypeScript and Next.js
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
-                      React
+                      Next.js
                     </span>
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
-                      Bootstrap
+                      TypeScript
                     </span>
                   </div>
                   <motion.a
-                    href="https://github.com/amadeodlp/space-exploration"
+                    href="https://github.com/amadeodlp/amastore"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 hover:text-white transition-colors"

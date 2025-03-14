@@ -84,6 +84,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             >
               About
             </NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </nav>
         </div>
 
