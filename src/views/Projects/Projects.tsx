@@ -99,6 +99,7 @@ const Projects: React.FC<ProjectsProps> = () => {
         "Full-stack DeFi platform combining React/TypeScript frontend, ASP.NET Core backend, and Solidity smart contracts for crypto trading and management.",
       image: cryptaraImage,
       technologies: ["React", "Solidity", "C#", ".NET"],
+      liveDemo: "https://amadeodlp.github.io/cryptara",
       github: "https://github.com/amadeodlp/finance-simplified",
       category: "fullstack",
       featured: true,
