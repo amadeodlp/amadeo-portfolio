@@ -5,6 +5,10 @@ import HeroSection from '@/components/organisms/HeroSection';
 import SectionHeader from '@/components/molecules/SectionHeader';
 import InfoSection from '@/components/molecules/InfoSection';
 import { pageBackgrounds } from '@/utils/imageUtils';
+// Import cryptara image
+import cryptaraImage from '@/assets/images/cryptara.png';
+import amastoreImage from '@/assets/images/amastore.png';
+import wavecasterImage from '@/assets/images/wavecaster.png';
 import { 
   FaReact, FaNodeJs, FaJava, FaDocker, FaGitAlt, FaAws,
   FaNpm, FaDatabase 
@@ -89,11 +93,22 @@ const Projects: React.FC<ProjectsProps> = () => {
   // Sample projects data
   const projects: Project[] = [
     {
+      id: "cryptara",
+      title: "Cryptara",
+      description:
+        "Full-stack DeFi platform combining React/TypeScript frontend, ASP.NET Core backend, and Solidity smart contracts for crypto trading and management.",
+      image: cryptaraImage,
+      technologies: ["React", "Solidity", "C#", ".NET"],
+      github: "https://github.com/amadeodlp/finance-simplified",
+      category: "fullstack",
+      featured: true,
+    },
+    {
       id: "amastore",
       title: "Amadeo Store",
       description:
         "E-commerce application built with TypeScript and Next.js with Stripe integration for payments.",
-      image: "/images/projects/amastore.jpg",
+      image: amastoreImage,
       technologies: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
       github: "https://github.com/amadeodlp/amastore",
       liveDemo: "https://amastore-sepia.vercel.app",
@@ -101,34 +116,15 @@ const Projects: React.FC<ProjectsProps> = () => {
       category: "frontend",
     },
     {
-      id: "canalradionov-ui",
-      title: "Canal Radionov",
+      id: "wavecaster",
+      title: "Wavecaster",
       description:
-        "User interface for a radio station built with TypeScript and React.",
-      image: "/images/projects/canalradionov.jpg",
-      technologies: ["React", "TypeScript", "Styled Components"],
-      github: "https://github.com/amadeodlp/canalradionov-ui",
-      category: "frontend",
-    },
-    {
-      id: "canalradionov-service",
-      title: "Canal Radionov API",
-      description:
-        "Backend service for a radio station built with Java and Spring Boot.",
-      image: "/images/projects/canalradionov-api.jpg",
-      technologies: ["Java", "Spring Boot", "MySQL"],
-      github: "https://github.com/amadeodlp/canalradionov-service",
-      category: "backend",
-    },
-    {
-      id: "finance-simplified",
-      title: "Finance Simplified",
-      description:
-        " full-stack DeFi platform combining React/TypeScript frontend, ASP.NET Core backend, and Solidity smart contracts in a unified monorepo architecture.",
-      image: "/images/projects/finance-simplified.jpg",
-      technologies: ["React", "Solidity", "C#"],
-      github: "https://github.com/amadeodlp/finance-simplified",
+        "Full-stack radio station platform featuring a React frontend with TypeScript and Spring Boot Java backend with MySQL database.",
+      image: wavecasterImage,
+      technologies: ["React", "TypeScript", "Java", "Spring Boot", "MySQL"],
+      github: "https://github.com/amadeodlp/wavecaster",
       category: "fullstack",
+      featured: true,
     },
     {
       id: "foodprocessor",
@@ -250,58 +246,62 @@ const Projects: React.FC<ProjectsProps> = () => {
           </div>
 
           {/* Projects Grid */}
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map(project => (
-                <div
-                  key={project.id}
-                  className="bg-dark-light/90 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm"
-                >
-                  {/* Project Image */}
-                  <div className="aspect-video bg-gradient-to-br from-[#653490] to-[#00E9C5] relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map(project => (
+              <div
+                key={project.id}
+                className="bg-dark-light/90 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm"
+              >
+                {/* Project Image */}
+                <div className="aspect-video bg-gradient-to-br from-[#653490] to-[#00E9C5] relative overflow-hidden">
+                  {(project.id === "cryptara" || project.id === "amastore" || project.id === "wavecaster") ? (
+                    <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
+                  ) : (
                     <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
                       {project.title.substring(0, 2).toUpperCase()}
                     </div>
+                  )}
+                </div>
+
+                {/* Project Info */}
+                <div className="p-6">
+                  <div className={`flex items-start ${project.id === "foodprocessor" || project.id === "nasa-react" ? "justify-center" : "justify-between"} mb-2`}>
+                    <h3 className={`text-xl font-bold group-hover:text-[#00E9C5] transition-colors ${project.id === "foodprocessor" || project.id === "nasa-react" ? "text-center" : ""}`}>
+                      {project.title}
+                    </h3>
+
+                    {project.featured && (
+                      <span className="bg-[#653490]/20 text-[#653490] text-xs px-2 py-1 rounded-full">
+                        Featured
+                      </span>
+                    )}
                   </div>
 
-                  {/* Project Info */}
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-xl font-bold group-hover:text-[#00E9C5] transition-colors">
-                        {project.title}
-                      </h3>
+                  <p className={`text-white/70 text-sm mb-4 ${project.id === "foodprocessor" || project.id === "nasa-react" ? "text-center" : ""}`}>
+                    {project.description}
+                  </p>
 
-                      {project.featured && (
-                        <span className="bg-[#653490]/20 text-[#653490] text-xs px-2 py-1 rounded-full">
-                          Featured
+                  <div className={`flex ${project.id === "foodprocessor" || project.id === "nasa-react" ? "justify-center" : "justify-between"} items-center`}>
+                    <div className={`flex flex-wrap gap-2 ${project.id === "foodprocessor" || project.id === "nasa-react" ? "justify-center" : ""}`}>
+                      {project.technologies.slice(0, 2).map((tech, index) => (
+                        <span
+                          key={index}
+                          className="bg-dark text-xs px-2 py-1 rounded flex items-center gap-1"
+                        >
+                          <span className="text-base">
+                            {getTechIcon(tech)}
+                          </span>
+                          <span>{tech}</span>
+                        </span>
+                      ))}
+                      {project.technologies.length > 2 && (
+                        <span className="bg-dark text-xs px-2 py-1 rounded">
+                          +{project.technologies.length - 2}
                         </span>
                       )}
                     </div>
 
-                    <p className="text-white/70 text-sm mb-4">
-                      {project.description}
-                    </p>
-
-                    <div className="flex justify-between items-center">
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.slice(0, 2).map((tech, index) => (
-                          <span
-                            key={index}
-                            className="bg-dark text-xs px-2 py-1 rounded flex items-center gap-1"
-                          >
-                            <span className="text-base">
-                              {getTechIcon(tech)}
-                            </span>
-                            <span>{tech}</span>
-                          </span>
-                        ))}
-                        {project.technologies.length > 2 && (
-                          <span className="bg-dark text-xs px-2 py-1 rounded">
-                            +{project.technologies.length - 2}
-                          </span>
-                        )}
-                      </div>
-
+                    {!(project.id === "foodprocessor" || project.id === "nasa-react") ? (
                       <div className="flex space-x-3">
                         {project.github && (
                           <a
@@ -349,11 +349,34 @@ const Projects: React.FC<ProjectsProps> = () => {
                           </a>
                         )}
                       </div>
-                    </div>
+                    ) : null}
                   </div>
+                  
+                  {/* GitHub link for bottom two projects - centered */}
+                  {(project.id === "foodprocessor" || project.id === "nasa-react") && project.github && (
+                    <div className="flex justify-center mt-4">
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white/70 hover:text-white transition-colors"
+                        aria-label={`GitHub repository for ${project.title}`}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      </a>
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
