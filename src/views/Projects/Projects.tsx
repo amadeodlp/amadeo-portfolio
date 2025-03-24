@@ -147,7 +147,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       description:
         "Personal portfolio website built with React, TypeScript, and Tailwind CSS.",
       image: portfolioImage,
-      technologies: ["React", "Material UI", "Express", "NASA API"],
+      technologies: ["React", "Tailwind CSS", "Typescript"],
       github: "https://github.com/amadeodlp/amadeo-portfolio",
       liveDemo: "https://amadeodlp.github.io/amadeo-portfolio",
       category: "frontend",
