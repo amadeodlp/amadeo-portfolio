@@ -7,51 +7,51 @@ import SectionHeader from '@/components/molecules/SectionHeader';
 import InfoSection from '@/components/molecules/InfoSection';
 import { pageBackgrounds } from '@/utils/imageUtils';
 import cryptaraImage from '@/assets/images/cryptara.png';
-import amastoreImage from '@/assets/images/amastore.png';
-import wavecasterImage from '@/assets/images/wavecaster.png';
+import aioniosImage from "@/assets/images/aionios.png"
+import wavecasterImage from "@/assets/images/wavecaster.png"
 
 // Use our image utility to get background images
-const primaryBackgrounds = pageBackgrounds.home.primary;
-const secondaryBackgrounds = pageBackgrounds.home.secondary;
+const primaryBackgrounds = pageBackgrounds.home.primary
+const secondaryBackgrounds = pageBackgrounds.home.secondary
 
 const Home: React.FC<HomeProps> = () => {
-  const [currentBgIndex, setCurrentBgIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
-  
+  const [currentBgIndex, setCurrentBgIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true)
+
   // Change background image every 10 seconds
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setIsTransitioning(true);
-      
+      setIsTransitioning(true)
+
       setTimeout(() => {
-        setCurrentBgIndex((prevIndex) => 
-          (prevIndex + 1) % primaryBackgrounds.length
-        );
-      }, 1000); // Change image after starting transition
-      
+        setCurrentBgIndex(
+          prevIndex => (prevIndex + 1) % primaryBackgrounds.length
+        )
+      }, 1000) // Change image after starting transition
+
       // Reset transition state
       setTimeout(() => {
-        setIsTransitioning(false);
-      }, 2500); // Extended transition time for secondary image effect
-    }, 10000); // Extended to 10 seconds for a slower pace
+        setIsTransitioning(false)
+      }, 2500) // Extended transition time for secondary image effect
+    }, 10000) // Extended to 10 seconds for a slower pace
 
-    return () => clearInterval(intervalId);
-  }, []);
-  
+    return () => clearInterval(intervalId)
+  }, [])
+
   // Handle scroll indicator
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
-        setShowScrollIndicator(false);
+        setShowScrollIndicator(false)
       } else {
-        setShowScrollIndicator(true);
+        setShowScrollIndicator(true)
       }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
     <>
@@ -321,14 +321,20 @@ const Home: React.FC<HomeProps> = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="aspect-video bg-gradient-to-tr relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
-                <img src={cryptaraImage} alt="Cryptara" className="absolute inset-0 w-full h-full object-cover" />
+                <img
+                  src={cryptaraImage}
+                  alt="Cryptara"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-[#00E9C5] transition-colors duration-300">
                   Cryptara
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  Full-stack DeFi platform combining React/TypeScript frontend, ASP.NET Core backend, and Solidity smart contracts for crypto trading and management.
+                  Full-stack DeFi platform combining React/TypeScript frontend,
+                  ASP.NET Core backend, and Solidity smart contracts for crypto
+                  trading and management.
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
@@ -337,6 +343,9 @@ const Home: React.FC<HomeProps> = () => {
                     </span>
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
                       Solidity
+                    </span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      .NET
                     </span>
                   </div>
                   <motion.a
@@ -361,21 +370,27 @@ const Home: React.FC<HomeProps> = () => {
               </div>
             </motion.div>
 
-            {/* Amadeo Store Project */}
+            {/* AIONIOS Project */}
             <motion.div
               className="bg-dark/80 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300"
               whileHover={{ y: -10 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="aspect-video bg-gradient-to-bl relative overflow-hidden group-hover:from-[#39ffda] group-hover:to-[#7d42ab] transition-all duration-500">
-                <img src={amastoreImage} alt="Amadeo Store" className="absolute inset-0 w-full h-full object-cover" />
+                <img
+                  src={aioniosImage}
+                  alt="AIONIOS"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-[#00E9C5] transition-colors duration-300">
-                  Amadeo Store
+                  AIONIOS
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  E-commerce application built with TypeScript and Next.js with Stripe integration for payments.
+                  Time Capsule in the blockchain. Full-stack web app built with
+                  Next.js, TypeScript, Spring Boot and Solidity smart contracts
+                  for storing memories to be opened in the future.
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
@@ -383,7 +398,10 @@ const Home: React.FC<HomeProps> = () => {
                       Next.js
                     </span>
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
-                      TypeScript
+                      Solidity
+                    </span>
+                    <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
+                      Spring Boot
                     </span>
                   </div>
                   <motion.a
@@ -415,14 +433,20 @@ const Home: React.FC<HomeProps> = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="aspect-video bg-gradient-to-br relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
-                <img src={wavecasterImage} alt="Wavecaster" className="absolute inset-0 w-full h-full object-cover" />
+                <img
+                  src={wavecasterImage}
+                  alt="Wavecaster"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-[#00E9C5] transition-colors duration-300">
                   Wavecaster
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  Full-stack radio station platform featuring a React frontend with TypeScript and Spring Boot Java backend with MySQL database.
+                  Full-stack radio station platform featuring a React frontend
+                  with TypeScript and Spring Boot Java backend with MySQL
+                  database.
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
@@ -520,6 +544,6 @@ const Home: React.FC<HomeProps> = () => {
       </section>
     </>
   )
-};
+}
 
 export default Home;
