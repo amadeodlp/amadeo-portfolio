@@ -5,7 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/amadeo-portfolio/", // Keep this for GitHub Pages deployment
+  base: "/", // Changed for custom domain amadeodlp.lat
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
