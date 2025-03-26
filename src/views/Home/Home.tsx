@@ -9,6 +9,9 @@ import { pageBackgrounds } from '@/utils/imageUtils';
 import cryptaraImage from '@/assets/images/cryptara.png';
 import aioniosImage from "@/assets/images/aionios.png"
 import wavecasterImage from "@/assets/images/wavecaster.png"
+import vikingSasquatchImage from "@/assets/images/fees.png"
+import firstCloseImage from "@/assets/images/firstclose.png"
+import keenvilImage from "@/assets/images/keenvil.png"
 
 // Use our image utility to get background images
 const primaryBackgrounds = pageBackgrounds.home.primary
@@ -158,12 +161,12 @@ const Home: React.FC<HomeProps> = () => {
             <InfoSection>
               I'm a seasoned software developer, and I can say I have worked
               across almost everything. From designing robust backend systems to
-              crafting intuitive front-end interfaces, I’ve built solutions that
+              crafting intuitive front-end interfaces, I've built solutions that
               are both scalable and efficient. My technical expertise spans
               across multiple languages, frameworks, and platforms, enabling me
               to tackle any challenge with confidence. I focus on quality,
               performance, and user experience, delivering results that speak
-              for themselves. When it comes to software development, I don’t
+              for themselves. When it comes to software development, I don't
               just follow industry standards—I set them.
             </InfoSection>
           </div>
@@ -179,11 +182,11 @@ const Home: React.FC<HomeProps> = () => {
                 and user experience
               </p>
               <p className="text-white/80 mb-6">
-                Ever since I wrote my first lines of code, I’ve been fascinated
+                Ever since I wrote my first lines of code, I've been fascinated
                 by the power of technology to bring ideas to life. What started
                 as curiosity quickly turned into a passion for building modern
                 web applications that are not only functional but also intuitive
-                and enjoyable to use. Over the years, I’ve honed my skills in
+                and enjoyable to use. Over the years, I've honed my skills in
                 technologies like React, TypeScript, Node.js, and Spring Boot,
                 always striving to write clean, efficient, and scalable code. I
                 love exploring new frameworks and tools, constantly learning and
@@ -308,11 +311,12 @@ const Home: React.FC<HomeProps> = () => {
         </div>
       </section>
 
-      {/* Projects Preview Section */}
+      {/* Projects & Experience Preview Section */}
       <section className="bg-dark-light py-20 relative z-10">
         <div className="container mx-auto px-4">
-          <SectionHeader title="PROJECTS" color="purple" />
+          <SectionHeader title="PROJECTS & EXPERIENCE" color="purple" />
 
+          {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {/* Cryptara Project */}
             <motion.div
@@ -480,30 +484,63 @@ const Home: React.FC<HomeProps> = () => {
             </motion.div>
           </div>
 
-          <div className="text-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block"
-            >
+          {/* Professional Experience Preview */}
+          <div className="mt-16 mb-12">
+            <div className="bg-dark/80 p-6 rounded-lg backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300 shadow-lg">
+              <h3 className="text-2xl font-bold mb-4 text-white">
+                Professional Experience
+              </h3>
+              <p className="text-white/80 mb-6">
+                Beyond personal projects, I've worked with companies like Viking
+                Sasquatch, FirstClose, and Keenvil, where I've contributed to
+                professional applications in the title business sector and
+                developed cross-platform solutions.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-6">
+                <div className="bg-dark rounded-lg p-4 flex-1 min-w-[250px]">
+                  <h4 className="font-semibold text-[#00E9C5] mb-2">
+                    Viking Sasquatch
+                  </h4>
+                  <p className="text-white/70 text-sm">
+                    Full-stack developer implementing cross-platform services
+                    and AI integrations
+                  </p>
+                </div>
+
+                <div className="bg-dark rounded-lg p-4 flex-1 min-w-[250px]">
+                  <h4 className="font-semibold text-[#00E9C5] mb-2">
+                    FirstClose
+                  </h4>
+                  <p className="text-white/70 text-sm">
+                    React developer maintaining equity web application for title
+                    business
+                  </p>
+                </div>
+
+                <div className="bg-dark rounded-lg p-4 flex-1 min-w-[250px]">
+                  <h4 className="font-semibold text-[#00E9C5] mb-2">Keenvil</h4>
+                  <p className="text-white/70 text-sm">
+                    React & React Native developer focused on responsive
+                    applications
+                  </p>
+                </div>
+              </div>
+
               <Link
-                to="/projects"
-                className="inline-flex items-center bg-[#653490] text-white px-6 py-3 rounded-md hover:bg-[#7e4aaa] transition-all duration-300 shadow-lg shadow-[#653490]/20 hover:shadow-xl"
+                to="/experience"
+                className="inline-flex items-center text-[#00E9C5] hover:underline group transition-all duration-300"
               >
-                see All Projects
+                <span className="group-hover:mr-1 transition-all duration-300">
+                  View Work Experience
+                </span>
                 <motion.svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 ml-2"
+                  className="h-5 w-5 ml-1 group-hover:ml-2 transition-all duration-300"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  initial={{ x: 0 }}
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    ease: "easeInOut",
-                  }}
+                  whileHover={{ x: 3 }}
+                  transition={{ type: "spring", stiffness: 400 }}
                 >
                   <path
                     fillRule="evenodd"
@@ -512,7 +549,78 @@ const Home: React.FC<HomeProps> = () => {
                   />
                 </motion.svg>
               </Link>
-            </motion.div>
+            </div>
+          </div>
+
+          {/* Action Buttons */}
+          <div className="text-center">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block"
+              >
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center bg-[#653490] text-white px-6 py-3 rounded-md hover:bg-[#7e4aaa] transition-all duration-300 shadow-lg shadow-[#653490]/20 hover:shadow-xl"
+                >
+                  See All Projects
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    initial={{ x: 0 }}
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </motion.svg>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block"
+              >
+                <Link
+                  to="/experience"
+                  className="inline-flex items-center bg-transparent border border-white/30 text-white px-6 py-3 rounded-md hover:bg-white/10 transition-all duration-300 hover:border-white/70 backdrop-blur-sm"
+                >
+                  See Work Experience
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    initial={{ x: 0 }}
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </motion.svg>
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -546,4 +654,4 @@ const Home: React.FC<HomeProps> = () => {
   )
 }
 
-export default Home;
+export default Home

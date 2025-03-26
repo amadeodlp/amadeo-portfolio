@@ -75,6 +75,16 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               Projects
             </NavLink>
             <NavLink
+              to="/experience"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white font-medium"
+                  : "text-white/80 hover:text-white transition-colors"
+              }
+            >
+              Experience
+            </NavLink>
+            <NavLink
               to="/about"
               className={({ isActive }) =>
                 isActive
@@ -162,6 +172,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
+            </NavLink>
+            <NavLink
+              to="/experience"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-white font-medium"
+                  : "text-white/80 hover:text-white transition-colors"
+              }
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Experience
             </NavLink>
             <NavLink
               to="/about"

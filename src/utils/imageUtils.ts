@@ -82,4 +82,8 @@ export const pageBackgrounds = {
     primary: [...backgroundImages.promotional, ...backgroundImages.misc],
     secondary: [...backgroundImages.studio],
   },
+  experience: {
+    primary: [...backgroundImages.dark, ...backgroundImages.studio],
+    secondary: [...backgroundImages.promotional, ...backgroundImages.creative],
+  },
 }
