@@ -7,6 +7,7 @@ import aioniosImage from "@/assets/images/aionios.png"
 import portfolioImage from "@/assets/images/portfolio.png"
 import cryptaraImage from "@/assets/images/cryptara.png"
 import amastoreImage from "@/assets/images/amastore.png"
+import sovngardeImage from "@/assets/images/sovngarde.png"
 import wavecasterImage from "@/assets/images/wavecaster.png"
 import {
   FaReact,
@@ -97,6 +98,18 @@ const Projects: React.FC<ProjectsProps> = () => {
   // Sample projects data
   const projects: Project[] = [
     {
+      id: "sovngarde",
+      title: "SovnGarde",
+      description:
+        "Gaming community platform user interface built with Nuxt 3, aimed at reuniting gamers and fostering connections.",
+      image: sovngardeImage,
+      technologies: ["Nuxt.js", "TypeScript", "Vue", "Tailwind CSS"],
+      github: "https://github.com/amadeodlp/sovngarde-ui",
+      liveDemo: "https://amadeodlp.github.io/sovngarde-ui",
+      featured: true,
+      category: "frontend",
+    },
+    {
       id: "cryptara",
       title: "Cryptara",
       description:
@@ -128,18 +141,6 @@ const Projects: React.FC<ProjectsProps> = () => {
       technologies: ["Java", "Solidity", "React"],
       github: "https://github.com/amadeodlp/aionios-ui",
       category: "fullstack",
-    },
-    {
-      id: "amastore",
-      title: "Amadeo Store",
-      description:
-        "E-commerce application built with TypeScript and Next.js with Stripe integration for payments.",
-      image: amastoreImage,
-      technologies: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
-      github: "https://github.com/amadeodlp/amastore",
-      liveDemo: "https://amastore-sepia.vercel.app",
-      featured: true,
-      category: "frontend",
     },
     {
       id: "portfolio",

@@ -8,10 +8,7 @@ import InfoSection from '@/components/molecules/InfoSection';
 import { pageBackgrounds } from '@/utils/imageUtils';
 import cryptaraImage from '@/assets/images/cryptara.png';
 import aioniosImage from "@/assets/images/aionios.png"
-import wavecasterImage from "@/assets/images/wavecaster.png"
-import vikingSasquatchImage from "@/assets/images/fees.png"
-import firstCloseImage from "@/assets/images/firstclose.png"
-import keenvilImage from "@/assets/images/keenvil.png"
+import sovngardeImage from "@/assets/images/sovngarde.png"
 
 // Use our image utility to get background images
 const primaryBackgrounds = pageBackgrounds.home.primary
@@ -430,7 +427,7 @@ const Home: React.FC<HomeProps> = () => {
               </div>
             </motion.div>
 
-            {/* Wavecaster Project */}
+            {/* SovnGarde Project */}
             <motion.div
               className="bg-dark/80 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300"
               whileHover={{ y: -10 }}
@@ -438,31 +435,30 @@ const Home: React.FC<HomeProps> = () => {
             >
               <div className="aspect-video bg-gradient-to-br relative overflow-hidden group-hover:from-[#7d42ab] group-hover:to-[#39ffda] transition-all duration-500">
                 <img
-                  src={wavecasterImage}
-                  alt="Wavecaster"
+                  src={sovngardeImage}
+                  alt="Sovngarde"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-[#00E9C5] transition-colors duration-300">
-                  Wavecaster
+                  SovnGarde
                 </h3>
                 <p className="text-white/70 text-sm mb-4">
-                  Full-stack radio station platform featuring a React frontend
-                  with TypeScript and Spring Boot Java backend with MySQL
-                  database.
+                  A gaming community designed to reunite players, game
+                  developers andd content-creators. Built with Nuxt 3.
                 </p>
                 <div className="flex justify-between items-center">
                   <div className="flex gap-2">
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
-                      React
+                      Nuxt 3
                     </span>
                     <span className="bg-black/30 text-xs px-2 py-1 rounded backdrop-blur-sm">
-                      Spring Boot
+                      Pinia
                     </span>
                   </div>
                   <motion.a
-                    href="https://github.com/amadeodlp/wavecaster"
+                    href="https://github.com/amadeodlp/sovngarde-ui"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-white/70 hover:text-white transition-colors"
