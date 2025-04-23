@@ -17,6 +17,7 @@ import {
   FaGitAlt,
   FaAws,
   FaDatabase,
+  FaVuejs,
 } from "react-icons/fa"
 import {
   SiTypescript,
@@ -66,8 +67,8 @@ const getTechIcon = (tech: string) => {
       return <FaAws className="text-[#FF9900]" />
     case "docker":
       return <FaDocker className="text-[#2496ED]" />
-    case "git":
-      return <FaGitAlt className="text-[#F05032]" />
+    case "vue":
+      return <FaVuejs className="text-[#F05032]" />
     case "tailwind css":
       return <SiTailwindcss className="text-[#38B2AC]" />
     case "styled components":
@@ -410,7 +411,7 @@ const Projects: React.FC<ProjectsProps> = () => {
               "MySQL",
               "AWS",
               "Docker",
-              "Git",
+              "Vue",
             ].map((tech, index) => (
               <div
                 key={index}
