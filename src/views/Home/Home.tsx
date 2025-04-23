@@ -509,15 +509,15 @@ const Home: React.FC<HomeProps> = () => {
                     FirstClose
                   </h4>
                   <p className="text-white/70 text-sm">
-                    React developer maintaining equity web application for title
-                    business
+                    React & Vue developer maintaining equity web application for
+                    title business
                   </p>
                 </div>
 
                 <div className="bg-dark rounded-lg p-4 flex-1 min-w-[250px]">
                   <h4 className="font-semibold text-[#00E9C5] mb-2">Keenvil</h4>
                   <p className="text-white/70 text-sm">
-                    React & React Native developer focused on responsive
+                    Front-End & Mobile developer focused on responsive
                     applications
                   </p>
                 </div>
