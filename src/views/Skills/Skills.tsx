@@ -195,38 +195,36 @@ const Skills: React.FC<SkillsProps> = () => {
 
   const skillCategories = [
     {
-      name: "Frontend Development",
+      name: "Cloud Architecture",
       skills: [
-        { name: "React & React Native", level: 95 },
+        { name: "AWS ECS & EC2", level: 95 },
+        { name: "AWS Lambda", level: 95 },
+        { name: "AWS Cognito", level: 95 },
+        { name: "AWS DynamoDB", level: 95 },
+        { name: "AWS S3", level: 90 },
+        { name: "Docker", level: 85 },
+      ],
+    },
+    {
+      name: "AI & Enterprise Connections",
+      skills: [
+        { name: "MCP Server Development", level: 85 },
+        { name: "Claude Integration", level: 80 },
+        { name: "API Integration", level: 90 },
+        { name: "Apache Camel", level: 85 },
+        { name: "Workflow Automation", level: 85 },
+        { name: "Auth0", level: 85 },
+      ],
+    },
+    {
+      name: "Full-Stack Foundation",
+      skills: [
+        { name: "React & React Native", level: 90 },
         { name: "TypeScript", level: 90 },
-        { name: "JavaScript", level: 95 },
-        { name: "Next.js", level: 85 },
-        { name: "Vue & Nuxt.js", level: 80 },
-        { name: "Tailwind CSS", level: 90 },
-      ],
-    },
-    {
-      name: "Backend Development",
-      skills: [
-        { name: "Java", level: 80 },
-        { name: "Spring Boot", level: 75 },
-        { name: "C#", level: 70 },
-        { name: ".NET", level: 70 },
-        { name: "Node/Express", level: 85 },
-        { name: "Apache Camel", level: 75 },
-      ],
-    },
-    {
-      name: "Blockchain, Cloud, AI",
-      skills: [
-        { name: "AWS DynamoDB", level: 80 },
-        { name: "AWS S3", level: 85 },
-        { name: "Solidity", level: 75 },
-        { name: "Claude", level: 75 },
-        { name: "AWS Cognito", level: 75 },
-        { name: "AWS Amplify", level: 70 },
-        { name: "Docker", level: 70 },
-        { name: "Auth0", level: 80 },
+        { name: "Java", level: 85 },
+        { name: ".NET", level: 80 },
+        { name: "Node/Express", level: 80 },
+        { name: "Spring Boot", level: 80 },
       ],
     },
   ]
@@ -237,22 +235,23 @@ const Skills: React.FC<SkillsProps> = () => {
         title={
           <>
             <span className="block">MY</span>
-            <span className="block">SKILLS</span>
-            <span className="block">AND</span>
-            <span className="block">EXPERTISE</span>
+            <span className="block">AWS CLOUD</span>
+            <span className="block">SKILLS &</span>
+            <span className="block">EXPERIENCE</span>
           </>
         }
         pageType="skills"
         description={
           <div className="mt-4 bg-black/70 backdrop-blur-sm p-4 rounded-lg">
             <p className="text-white/90">
-              I'm a flexible developer who can handle just about anything!
-              Whether it's creating smooth front-end experiences with React,
-              Vue, Next.js, or Tailwind, or building solid back-end systems with
-              Spring Boot, .NET, Node/Express, and AWS, I've got it covered. I'm
-              all about clean design with atomic principles and BEM, and I have
-              already dived deep in AI world. Whatever the project, I'm ready to
-              roll up my sleeves and make it happen!
+              I specialize in AWS cloud infrastructure with 4+ years of experience in software development.
+              My core focus is designing robust AWS environments that optimize for performance, 
+              security, and cost-efficiency. At Viking Sasquatch, I've built systems that reduced 
+              operational costs significantly while improving scalability. I've also gained 
+              practical experience implementing AI connections through MCP servers, 
+              resulting in more efficient workflows. My technical skills are built on a 
+              solid foundation of full-stack development, allowing me to create 
+              end-to-end solutions.
             </p>
           </div>
         }
@@ -272,14 +271,13 @@ const Skills: React.FC<SkillsProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-              In my professional journey, I've developed a strong technical
-              skillset allowing me to work across various domains including:
-              Frontend, Backend, Mobile, Cloud, DevOps and more. Below you'll
-              find a detailed overview of my technical capabilities and
-              expertise with various technologies such as React, TypeScript,
-              Java, Spring Boot, AWS, and more. My commitment to continuous
-              learning ensures I stay current with emerging technologies and
-              best practices.
+              Throughout my career at Viking Sasquatch, I've focused on developing expertise
+              in cloud infrastructure while maintaining a practical approach to new technologies
+              like AI integration. My work centers on designing efficient AWS environments
+              that balance performance needs with cost considerations. I've worked extensively
+              with various AWS services and have practical experience connecting AI systems
+              with enterprise tools. Below you'll find details about my technical capabilities,
+              with emphasis on my cloud infrastructure work and other technical skills.
             </InfoSection>
           </div>
 
@@ -335,9 +333,9 @@ const Skills: React.FC<SkillsProps> = () => {
               <div className="space-y-6">
                 <div className="border-l-4 border-[#653490] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
-                    Unreal Engine & C++ Course
+                    AWS Cloud Architecture
                   </h4>
-                  <p className="text-white/70">Udemy</p>
+                  <p className="text-white/70">AWS Training & Certification</p>
                 </div>
 
                 <div className="border-l-4 border-[#653490] pl-4">
@@ -364,9 +362,9 @@ const Skills: React.FC<SkillsProps> = () => {
               <div className="space-y-6">
                 <div className="border-l-4 border-[#00E9C5] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
-                    AWS Expertise
+                    AWS Cloud Infrastructure Design
                   </h4>
-                  <p className="text-white/70">Amazon Web Services</p>
+                  <p className="text-white/70">ECS, Lambda, Cognito, DynamoDB, S3, CloudFormation</p>
                 </div>
 
                 <div className="border-l-4 border-[#00E9C5] pl-4">
@@ -378,11 +376,9 @@ const Skills: React.FC<SkillsProps> = () => {
 
                 <div className="border-l-4 border-[#00E9C5] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
-                    multi-IDE Sailor
+                    AI Integration Implementation
                   </h4>
-                  <p className="text-white/70">
-                    Visual Studio, IntelliJ, Xcode, Android Studio
-                  </p>
+                  <p className="text-white/70">MCP Servers, Claude, Enterprise Connections</p>
                 </div>
               </div>
             </div>

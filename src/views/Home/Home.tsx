@@ -9,6 +9,8 @@ import { pageBackgrounds } from '@/utils/imageUtils';
 import cryptaraImage from '@/assets/images/cryptara.png';
 import aioniosImage from "@/assets/images/aionios.png"
 import sovngardeImage from "@/assets/images/sovngarde.png"
+import { FaAws, FaReact } from 'react-icons/fa';
+import { SiClaude } from 'react-icons/si';
 
 // Use our image utility to get background images
 const primaryBackgrounds = pageBackgrounds.home.primary
@@ -73,12 +75,12 @@ const Home: React.FC<HomeProps> = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white py-20">
-              <span className="block">IF YOU CAN THINK OF IT,</span>
-              <span className="block">I CAN MAKE IT REAL</span>
+              <span className="block">THE RIGHT TECH</span>
+              <span className="block">FOR THE RIGHT REASON</span>
             </h1>
 
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto text-right">
-              I'm Amadeo de la Peña, software developer based in Argentina.
+              Where technology choices are guided by business value
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -156,15 +158,12 @@ const Home: React.FC<HomeProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-              I'm a seasoned software developer, and I can say I have worked
-              across almost everything. From designing robust backend systems to
-              crafting intuitive front-end interfaces, I've built solutions that
-              are both scalable and efficient. My technical expertise spans
-              across multiple languages, frameworks, and platforms, enabling me
-              to tackle any challenge with confidence. I focus on quality,
-              performance, and user experience, delivering results that speak
-              for themselves. When it comes to software development, I don't
-              just follow industry standards—I set them.
+              Allow me to introduce myself. I'm Amadeo de la Peña, a developer who prioritizes
+              business outcomes over technical complexity. At Viking Sasquatch, I translate
+              business challenges into technological solutions, whether that means designing
+              AWS infrastructure or implementing AI connections. What sets me apart is my
+              ability to choose the right tools for each specific problem, creating systems
+              that deliver measurable value.
             </InfoSection>
           </div>
 
@@ -174,22 +173,12 @@ const Home: React.FC<HomeProps> = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4 text-white">Who am I?</h3>
               <p className="text-white/80 mb-4">
-                I am a passionate software developer specializing in building
-                modern web applications with a focus on clean code, performance,
-                and user experience
+                I'm a cloud architect with AWS infrastructure expertise and practical AI integration experience.
               </p>
               <p className="text-white/80 mb-6">
-                Ever since I wrote my first lines of code, I've been fascinated
-                by the power of technology to bring ideas to life. What started
-                as curiosity quickly turned into a passion for building modern
-                web applications that are not only functional but also intuitive
-                and enjoyable to use. Over the years, I've honed my skills in
-                technologies like React, TypeScript, Node.js, and Spring Boot,
-                always striving to write clean, efficient, and scalable code. I
-                love exploring new frameworks and tools, constantly learning and
-                refining my approach to software development. I also have
-                experience working with AWS, leveraging cloud services to build
-                scalable and reliable applications.{" "}
+                My journey at Viking Sasquatch has evolved from full-stack development to cloud architecture.
+                I work with ECS, Lambda, Cognito, and DynamoDB to build cost-efficient systems.
+                Recently, I've created MCP servers to connect Claude AI with enterprise tools.
               </p>
               <Link
                 to="/about"
@@ -218,64 +207,31 @@ const Home: React.FC<HomeProps> = () => {
             <div>
               <div className="bg-dark-light/80 p-6 rounded-lg h-full shadow-lg backdrop-blur-sm border border-white/5 hover:border-white/10 transition-all duration-300">
                 <h3 className="text-2xl font-bold mb-4 text-white">
-                  Main coding languages I use
+                  My Core Expertise Areas
                 </h3>
 
                 <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-white">TypeScript</span>
-                      <span className="text-white/60">90%</span>
-                    </div>
-                    <div className="w-full h-2 bg-dark/80 rounded-full overflow-hidden shadow-inner">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
-                        initial={{ width: 0 }}
-                        animate={{ width: "90%" }}
-                        transition={{
-                          duration: 1.5,
-                          delay: 0.2,
-                          ease: "easeOut",
-                        }}
-                      />
+                  <div className="p-3 bg-dark/30 rounded-lg hover:bg-dark/40 transition-all border-l-4 border-[#00E9C5]">
+                    <div className="flex items-center">
+                      <FaAws className="text-[#FF9900] text-lg mr-2" />
+                      <span className="text-white font-medium">AWS Cloud Infrastructure</span>
+                      <span className="ml-auto text-white/60 text-xs">Core expertise</span>
                     </div>
                   </div>
 
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-white">Java</span>
-                      <span className="text-white/60">85%</span>
-                    </div>
-                    <div className="w-full h-2 bg-dark/80 rounded-full overflow-hidden shadow-inner">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
-                        initial={{ width: 0 }}
-                        animate={{ width: "85%" }}
-                        transition={{
-                          duration: 1.5,
-                          delay: 0.4,
-                          ease: "easeOut",
-                        }}
-                      />
+                  <div className="p-3 bg-dark/30 rounded-lg hover:bg-dark/40 transition-all border-l-4 border-[#653490]">
+                    <div className="flex items-center">
+                      <SiClaude className="text-[#7D64FF] text-lg mr-2" />
+                      <span className="text-white font-medium">AI Integration</span>
+                      <span className="ml-auto text-white/60 text-xs">Current focus</span>
                     </div>
                   </div>
 
-                  <div>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-white">C#</span>
-                      <span className="text-white/60">80%</span>
-                    </div>
-                    <div className="w-full h-2 bg-dark/80 rounded-full overflow-hidden shadow-inner">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
-                        initial={{ width: 0 }}
-                        animate={{ width: "80%" }}
-                        transition={{
-                          duration: 1.5,
-                          delay: 0.6,
-                          ease: "easeOut",
-                        }}
-                      />
+                  <div className="p-3 bg-dark/30 rounded-lg hover:bg-dark/40 transition-all border-l-4 border-[#00E9C5]">
+                    <div className="flex items-center">
+                      <FaReact className="text-[#61DAFB] text-lg mr-2" />
+                      <span className="text-white font-medium">Full-Stack Development</span>
+                      <span className="ml-auto text-white/60 text-xs">Strong foundation</span>
                     </div>
                   </div>
 

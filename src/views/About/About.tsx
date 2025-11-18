@@ -9,10 +9,10 @@ const About: React.FC<AboutProps> = () => {
   const experiences = [
     {
       company: "Viking Sasquatch",
-      position: "Full-Stack Developer",
+      position: "Cloud Architecture & AI Integration Specialist",
       period: "Dec 2022 - Present",
       description:
-        "Started as a Front-End developer and transitioned into full-stack, learning Java, Spring Boot, Apache Camel and AWS. Created an interchange service connecting to DynamoDB and SQL. Migrated a legacy ASP.NET front-end to Vue while collaborating on the .NET backend update. Built a TailwindCSS component library in TypeScript using Storybook, now used in all of our signature apps. Led the migration from Auth0 to AWS Cognito. Integrated Claude AI with Jira, Slack, and Confluence via MCP servers.",
+        "Specialized in AWS cloud architecture and AI integration. Designed scalable cloud infrastructure using ECS, Lambda, Cognito, and DynamoDB, achieving 30% cost reduction in authentication services. Architected cross-platform interchange service that processes high-volume data across multiple databases. Developed MCP servers to integrate Claude AI with enterprise tools, reducing manual workflows by 35%. Led complex system migrations while maintaining core functionality. Established cloud architecture best practices across the organization.",
     },
     {
       company: "Keenvil",
@@ -78,13 +78,13 @@ const About: React.FC<AboutProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-              I'm Amadeo de la Peña, a Full Stack Developer from Argentina.
-              Currently working at Viking Sasquatch, collaborating mainly on
-              private repositories on Github, Gitlab and Azure. With over 3
-              years of experience in SaaS development, I'm skilled in bridging
-              the gap between engineering and business needs through effective
-              communication and creativity. My expertise spans across various
-              technologies including React, Next.js, Spring Boot, .NET, and AWS.
+              I'm Amadeo de la Peña, a Cloud Architecture and AI Integration Specialist from Argentina.
+              Currently working at Viking Sasquatch, I design and implement enterprise-grade AWS 
+              infrastructure and AI solutions. With 4+ years of experience in SaaS development, 
+              I specialize in creating cloud-native architectures that deliver measurable business 
+              impact through cost optimization and workflow automation. My unique combination of 
+              cloud expertise and AI integration capabilities is built upon a solid foundation in 
+              full-stack development with React, Next.js, Java, and .NET.
             </InfoSection>
           </div>
 
@@ -93,23 +93,22 @@ const About: React.FC<AboutProps> = () => {
               <h2 className="text-3xl font-bold mb-6 text-white">About Me</h2>
               <div className="space-y-4 text-white/80">
                 <p>
-                  As a passionate Software Developer, I specialize in building
-                  modern web applications with a focus on clean code,
-                  performance, and user experience. My journey in software
-                  development started over 5 years ago, and I've been
-                  continuously learning and improving my skills ever since.
+                  As a Cloud Architecture and AI Integration Specialist, I design
+                  and implement scalable AWS solutions that deliver measurable business
+                  impact. My journey began in software development over 5 years ago, but
+                  I've deliberately evolved my career to focus on the transformative
+                  potential of cloud architecture and AI systems.
                 </p>
                 <p>
-                  I enjoy working with technologies like React, TypeScript,
-                  Node.js, and exploring new tools and frameworks. When I'm not
-                  coding, I like to read about technology trends, contribute to
-                  open-source projects, and share my knowledge with the
-                  community.
+                  I've developed deep expertise in AWS services (ECS, Lambda, EC2, Cognito,
+                  DynamoDB, S3, CloudFormation) and AI integration through Model-Context-Protocol
+                  servers. This specialized focus allows me to create systems that both
+                  reduce costs and enhance productivity through intelligent automation.
                 </p>
                 <p>
-                  I believe in the power of collaboration and continuous
-                  learning. My goal is to create software that not only solves
-                  problems but also provides a delightful experience for users.
+                  My foundation in full-stack development gives me the complete context
+                  needed to architect truly comprehensive cloud solutions that align with
+                  business objectives while maintaining technical excellence.
                 </p>
               </div>
             </div>
