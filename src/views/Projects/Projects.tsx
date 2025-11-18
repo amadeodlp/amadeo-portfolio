@@ -188,17 +188,7 @@ const Projects: React.FC<ProjectsProps> = () => {
       github: "https://github.com/amadeodlp/aionios-ui",
       category: "fullstack",
     },
-    {
-      id: "portfolio",
-      title: "Portfolio",
-      description:
-        "Personal portfolio website built with React, TypeScript, and Tailwind CSS.",
-      image: portfolioImage,
-      technologies: ["React", "Tailwind CSS", "Typescript"],
-      github: "https://github.com/amadeodlp/amadeo-portfolio",
-      liveDemo: "https://amadeodlp.github.io/amadeo-portfolio",
-      category: "frontend",
-    },
+
   ]
 
   const filters = [
@@ -256,9 +246,8 @@ const Projects: React.FC<ProjectsProps> = () => {
         description={
           <div className="mt-4 bg-black/70 backdrop-blur-sm p-4 rounded-lg">
             <p className="text-white/90">
-              Here you'll see some of my public projects. I also work in private
-              companies, if you have doubts about my experience in some area,
-              challenge me ;)
+              A selection of public projects I've built. Most of my current work is 
+              proprietary, but these demonstrate my approach to different technical challenges.
             </p>
           </div>
         }
@@ -268,14 +257,11 @@ const Projects: React.FC<ProjectsProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-              At Viking Sasquatch, I've had the opportunity to work on projects that showcase 
-              my cloud infrastructure skills and practical AI integration experience. My work 
-              focuses on designing efficient AWS environments and implementing solutions that 
-              connect enterprise systems. These projects demonstrate my approach to creating 
-              robust cloud architectures that prioritize performance, security, and cost-efficiency. 
-              I've also gained hands-on experience with MCP servers, connecting AI systems like Claude 
-              with enterprise tools to streamline workflows. My full-stack development background 
-              provides a solid foundation that allows me to understand and implement complete solutions.
+              At Viking Sasquatch, I work on problems that need different technical approaches. 
+              Some require AWS infrastructure, others need AI integrations, some just need solid 
+              full-stack work. I've built systems ranging from authentication migrations to MCP 
+              servers connecting Claude with GitHub and Jira. The common thread is thinking about 
+              trade-offs before choosing the stack.
             </InfoSection>
           </div>
 

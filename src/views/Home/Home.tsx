@@ -80,7 +80,7 @@ const Home: React.FC<HomeProps> = () => {
             </h1>
 
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto text-right">
-              Where technology choices are guided by business value
+              We choose your stack for the business needs, not vice versa.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -158,12 +158,10 @@ const Home: React.FC<HomeProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-              Allow me to introduce myself. I'm Amadeo de la Peña, a developer who prioritizes
-              business outcomes over technical complexity. At Viking Sasquatch, I translate
-              business challenges into technological solutions, whether that means designing
-              AWS infrastructure or implementing AI connections. What sets me apart is my
-              ability to choose the right tools for each specific problem, creating systems
-              that deliver measurable value.
+              I'm Amadeo de la Peña, a developer at Viking Sasquatch. I focus on
+              AWS infrastructure, AI integrations, and full-stack fundamentals.
+              I work to make things simpler for the user, scalable for the
+              company, and maintainable for the team.
             </InfoSection>
           </div>
 
@@ -172,13 +170,14 @@ const Home: React.FC<HomeProps> = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold mb-4 text-white">Who am I?</h3>
-              <p className="text-white/80 mb-4">
-                I'm a cloud architect with AWS infrastructure expertise and practical AI integration experience.
-              </p>
               <p className="text-white/80 mb-6">
-                My journey at Viking Sasquatch has evolved from full-stack development to cloud architecture.
-                I work with ECS, Lambda, Cognito, and DynamoDB to build cost-efficient systems.
-                Recently, I've created MCP servers to connect Claude AI with enterprise tools.
+                At Viking Sasquatch, I've worked through all layers of software
+                development. Full stack migrations, auth systems, ETL systems,
+                AI integrations, you name it. I love learning new technologies
+                and applying them to solve real-world problems, but I found out
+                that the best solutions often come from simplicity and
+                understanding the business rather than sticking to your first
+                stack idea.
               </p>
               <Link
                 to="/about"
@@ -214,24 +213,36 @@ const Home: React.FC<HomeProps> = () => {
                   <div className="p-3 bg-dark/30 rounded-lg hover:bg-dark/40 transition-all border-l-4 border-[#00E9C5]">
                     <div className="flex items-center">
                       <FaAws className="text-[#FF9900] text-lg mr-2" />
-                      <span className="text-white font-medium">AWS Cloud Infrastructure</span>
-                      <span className="ml-auto text-white/60 text-xs">Core expertise</span>
+                      <span className="text-white font-medium">
+                        AWS Cloud Infrastructure
+                      </span>
+                      <span className="ml-auto text-white/60 text-xs">
+                        Core expertise
+                      </span>
                     </div>
                   </div>
 
                   <div className="p-3 bg-dark/30 rounded-lg hover:bg-dark/40 transition-all border-l-4 border-[#653490]">
                     <div className="flex items-center">
                       <SiClaude className="text-[#7D64FF] text-lg mr-2" />
-                      <span className="text-white font-medium">AI Integration</span>
-                      <span className="ml-auto text-white/60 text-xs">Current focus</span>
+                      <span className="text-white font-medium">
+                        AI Integration
+                      </span>
+                      <span className="ml-auto text-white/60 text-xs">
+                        Current focus
+                      </span>
                     </div>
                   </div>
 
                   <div className="p-3 bg-dark/30 rounded-lg hover:bg-dark/40 transition-all border-l-4 border-[#00E9C5]">
                     <div className="flex items-center">
                       <FaReact className="text-[#61DAFB] text-lg mr-2" />
-                      <span className="text-white font-medium">Full-Stack Development</span>
-                      <span className="ml-auto text-white/60 text-xs">Strong foundation</span>
+                      <span className="text-white font-medium">
+                        Full-Stack Development
+                      </span>
+                      <span className="ml-auto text-white/60 text-xs">
+                        Strong foundation
+                      </span>
                     </div>
                   </div>
 
@@ -581,12 +592,13 @@ const Home: React.FC<HomeProps> = () => {
       <section className="bg-gradient-to-r from-[#653490] to-[#00E9C5] py-20 relative z-10">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            AI made us all skilled. Hire your next developer based on his
-            adaptability, intuition and good taste.
+            Not every problem needs the latest framework
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            I'm always open to tech talks and project discussions. Feel free to
-            reach me any time.
+            I choose technologies based on requirements, not trends. Sometimes
+            that means AWS Lambda, sometimes it's a simple REST API. If you're
+            looking for someone who thinks about trade-offs before jumping to
+            solutions, let's talk.
           </p>
           <motion.div
             whileHover={{ scale: 1.05 }}
