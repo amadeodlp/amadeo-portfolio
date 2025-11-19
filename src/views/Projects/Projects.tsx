@@ -9,6 +9,8 @@ import cryptaraImage from "@/assets/images/cryptara.png"
 import amastoreImage from "@/assets/images/amastore.png"
 import sovngardeImage from "@/assets/images/sovngarde.png"
 import wavecasterImage from "@/assets/images/wavecaster.png"
+import migrationToolImage from "@/assets/images/migration-tool.png"
+import mcpImage from "@/assets/images/mcp.png"
 import {
   FaReact,
   FaNodeJs,
@@ -34,6 +36,9 @@ import {
   SiDotnet,
   SiSolidity,
   SiClaude,
+  SiPython,
+  SiJira,
+  SiConfluence,
 } from "react-icons/si"
 
 // Technology icon mapping function
@@ -85,6 +90,26 @@ const getTechIcon = (tech: string) => {
       return <FaAws className="text-[#FF9900]" />
     case "aws s3":
       return <FaAws className="text-[#FF9900]" />
+    case "aws rds":
+      return <FaDatabase className="text-[#527FFF]" />
+    case "aws lambda":
+      return <FaAws className="text-[#FF9900]" />
+    case "sql server":
+      return <FaDatabase className="text-[#CC2927]" />
+    case "bcp":
+      return <FaDatabase className="text-[#00E9C5]" />
+    case "bash":
+      return <FaGitAlt className="text-[#4EAA25]" />
+    case "python":
+      return <SiPython className="text-[#3776AB]" />
+    case "mcp":
+      return <SiClaude className="text-[#7D64FF]" />
+    case "jira":
+      return <SiJira className="text-[#0052CC]" />
+    case "github":
+      return <FaGitAlt className="text-white" />
+    case "confluence":
+      return <SiConfluence className="text-[#172B4D]" />
     default:
       return <div className="text-[#00E9C5]">{tech.substring(0, 1)}</div>
   }
@@ -98,6 +123,26 @@ const Projects: React.FC<ProjectsProps> = () => {
 
   // Sample projects data
   const projects: Project[] = [
+    {
+      id: "mcp-servers",
+      title: "Model Context Protocol Servers",
+      description:
+        "Enterprise AI integration system connecting Claude Desktop with Windows filesystem and external APIs (Jira, Miro, GitHub, Confluence). Built custom MCP servers in Python that enable Claude to read/write files, manage tickets, update boards, and sync documentation autonomously. Accelerated development workflows by 10x through intelligent automation and seamless tool integration.",
+      image: mcpImage,
+      technologies: ["Python", "Claude", "MCP", "Jira", "GitHub", "Confluence"],
+      featured: true,
+      category: "ai",
+    },
+    {
+      id: "titlescout-etl",
+      title: "TitleScout Migration Tool",
+      description:
+        "Enterprise ETL system migrating terabytes of title company data from legacy platforms (RamQuest, ResWare, SoftPro) to unified AWS infrastructure. Built with .NET 6 WPF, transforms disparate SQL schemas into standardized format, handles billions of records with cursor-based pagination and staging tables. Exports via BCP to S3, triggers Lambda for batched RDS import with constraint management.",
+      image: migrationToolImage,
+      technologies: [".NET", "AWS", "AWS S3", "AWS Lambda", "AWS RDS", "SQL Server", "BCP", "Bash"],
+      featured: true,
+      category: "aws",
+    },
     {
       id: "sovngarde",
       title: "SovnGarde",
@@ -143,25 +188,15 @@ const Projects: React.FC<ProjectsProps> = () => {
       github: "https://github.com/amadeodlp/aionios-ui",
       category: "fullstack",
     },
-    {
-      id: "portfolio",
-      title: "Portfolio",
-      description:
-        "Personal portfolio website built with React, TypeScript, and Tailwind CSS.",
-      image: portfolioImage,
-      technologies: ["React", "Tailwind CSS", "Typescript"],
-      github: "https://github.com/amadeodlp/amadeo-portfolio",
-      liveDemo: "https://amadeodlp.github.io/amadeo-portfolio",
-      category: "frontend",
-    },
+
   ]
 
   const filters = [
     { key: "all", label: "All Projects" },
-    { key: "frontend", label: "Frontend" },
-    { key: "backend", label: "Backend" },
+    { key: "aws", label: "AWS Architecture" },
+    { key: "ai", label: "AI Integration" },
     { key: "fullstack", label: "Full Stack" },
-    { key: "mobile", label: "Mobile" },
+    { key: "frontend", label: "Frontend" },
   ]
 
   // Filter projects based on active filter
@@ -211,9 +246,8 @@ const Projects: React.FC<ProjectsProps> = () => {
         description={
           <div className="mt-4 bg-black/70 backdrop-blur-sm p-4 rounded-lg">
             <p className="text-white/90">
-              Here you'll see some of my public projects. I also work in private
-              companies, if you have doubts about my experience in some area,
-              challenge me ;)
+              A selection of public projects I've built. Most of my current work is 
+              proprietary, but these demonstrate my approach to different technical challenges.
             </p>
           </div>
         }
@@ -223,14 +257,11 @@ const Projects: React.FC<ProjectsProps> = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <InfoSection>
-              Discover all my featured projects, showcasing some of my most
-              interesting work across different technologies and frameworks. My
-              portfolio demonstrates my experience with frontend, backend, and
-              full-stack development. Each project reflects my problem-solving
-              approach, attention to detail, and commitment to creating
-              efficient, user-friendly solutions. From e-commerce platforms to
-              custom APIs and data visualization tools, these projects highlight
-              my versatility as a developer.
+              At Viking Sasquatch, I work on problems that need different technical approaches. 
+              Some require AWS infrastructure, others need AI integrations, some just need solid 
+              full-stack work. I've built systems ranging from authentication migrations to MCP 
+              servers connecting Claude with GitHub and Jira. The common thread is thinking about 
+              trade-offs before choosing the stack.
             </InfoSection>
           </div>
 
@@ -400,18 +431,18 @@ const Projects: React.FC<ProjectsProps> = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
             {[
-              "React",
-              "Vue",
-              "TypeScript",
-              "Node.js",
-              "Claude",
-              "Next.js",
-              ".NET",
-              "Spring Boot",
-              "Solidity",
-              "MySQL",
               "AWS",
+              "Claude",
+              "AWS Lambda",
+              "AWS Cognito",
+              "AWS DynamoDB",
+              "AWS S3",
               "Docker",
+              "React",
+              "Java",
+              ".NET",
+              "TypeScript",
+              "Spring Boot",
             ].map((tech, index) => (
               <div
                 key={index}
@@ -430,11 +461,12 @@ const Projects: React.FC<ProjectsProps> = () => {
       <section className="bg-gradient-to-r from-[#653490] to-[#00E9C5] py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Looking to hire a developer?
+            Looking for AWS cloud expertise with AI integration experience?
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            I'm available for freelance projects and job opportunities. If you
-            have a project in mind or want to chat, contact me!
+            I design robust cloud infrastructure and have practical experience connecting 
+            AI systems with enterprise tools. If you're looking to optimize your AWS environment 
+            or streamline workflows with intelligent automation, let's connect!
           </p>
           <a
             href="/contact"
