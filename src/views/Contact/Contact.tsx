@@ -302,19 +302,6 @@ const Contact: React.FC<ContactProps> = () => {
           </div>
         </div>
       </section>
-      
-      <section className="bg-dark-light py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="text-2xl font-bold mb-6 text-white">Frequently Asked Questions</h3>
-          <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-            If you have any questions about my services or how we can work together,
-            don't hesitate to contact me directly. I'll respond as soon as possible.
-          </p>
-          <div className="inline-block bg-red-600 text-white font-medium uppercase tracking-wide px-6 py-2 transition-colors hover:bg-red-700">
-            Learn More
-          </div>
-        </div>
-      </section>
     </>
   );
 };

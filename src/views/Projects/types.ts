@@ -10,4 +10,7 @@ export interface Project {
   liveDemo?: string
   featured?: boolean
   category: "frontend" | "backend" | "fullstack" | "mobile" | "ai" | "aws"
+  architecture?: string
+  challenges?: string
+  metrics?: string
 }

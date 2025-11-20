@@ -63,8 +63,8 @@ export const getRandomImagePair = () => {
 // Page-specific image sets
 export const pageBackgrounds = {
   home: {
-    primary: [...backgroundImages.personal],
-    secondary: [...backgroundImages.studio, ...backgroundImages.misc],
+    primary: [...backgroundImages.misc, ...backgroundImages.creative],
+    secondary: [...backgroundImages.dark],
   },
   projects: {
     primary: [...backgroundImages.creative, ...backgroundImages.studio],
@@ -75,8 +75,8 @@ export const pageBackgrounds = {
     secondary: [...backgroundImages.creative],
   },
   about: {
-    primary: [...backgroundImages.misc, ...backgroundImages.creative],
-    secondary: [...backgroundImages.dark],
+    primary: [...backgroundImages.personal],
+    secondary: [...backgroundImages.studio, ...backgroundImages.misc],
   },
   contact: {
     primary: [...backgroundImages.promotional, ...backgroundImages.misc],

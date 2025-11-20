@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import { SkillsProps } from './types';
 import HeroSection from '@/components/organisms/HeroSection';
 import SectionHeader from '@/components/molecules/SectionHeader';
-import InfoSection from '@/components/molecules/InfoSection';
 import TechIconsRotator from '@/components/molecules/TechIconsRotator';
 import {
   FaReact,
@@ -29,7 +28,6 @@ import {
   SiAuth0,
 } from "react-icons/si"
 
-// Define a mapping function for skill icons
 const getSkillIcon = (skillName: string) => {
   const iconProps = { className: "mr-2 text-xl" }
 
@@ -158,7 +156,6 @@ const Skills: React.FC<SkillsProps> = () => {
     }
   }, [controls, inView])
 
-  // Array of tech icons for the rotator
   const techIconsList = [
     FaReact,
     SiTypescript,
@@ -177,54 +174,46 @@ const Skills: React.FC<SkillsProps> = () => {
     SiAuth0,
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0 },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0 },
-    },
-  }
-
   const skillCategories = [
     {
-      name: "Cloud Architecture",
+      name: "Cloud & Infrastructure",
       skills: [
-        { name: "AWS ECS & EC2", level: 95 },
-        { name: "AWS Lambda", level: 95 },
-        { name: "AWS Cognito", level: 95 },
-        { name: "AWS DynamoDB", level: 95 },
-        { name: "AWS S3", level: 90 },
-        { name: "Docker", level: 85 },
+        { name: "AWS ECS & EC2", level: 90 },
+        { name: "AWS Lambda", level: 90 },
+        { name: "AWS Cognito", level: 90 },
+        { name: "AWS DynamoDB", level: 90 },
+        { name: "AWS S3", level: 85 },
+        { name: "Docker", level: 80 },
       ],
     },
     {
-      name: "AI & Enterprise Connections",
+      name: "AI & Integration",
       skills: [
-        { name: "MCP Server Development", level: 85 },
-        { name: "Claude Integration", level: 80 },
-        { name: "API Integration", level: 90 },
-        { name: "Apache Camel", level: 85 },
-        { name: "Workflow Automation", level: 85 },
-        { name: "Auth0", level: 85 },
+        { name: "Claude", level: 80 },
+        { name: "MCP Servers", level: 80 },
+        { name: "API Integration", level: 85 },
+        { name: "Apache Camel", level: 80 },
+        { name: "Auth0", level: 80 },
       ],
     },
     {
-      name: "Full-Stack Foundation",
+      name: "Frontend",
       skills: [
-        { name: "React & React Native", level: 90 },
-        { name: "TypeScript", level: 90 },
-        { name: "Java", level: 85 },
-        { name: ".NET", level: 80 },
-        { name: "Node/Express", level: 80 },
+        { name: "React & React Native", level: 85 },
+        { name: "TypeScript", level: 85 },
+        { name: "JavaScript", level: 85 },
+        { name: "Next.js", level: 75 },
+        { name: "Vue & Nuxt.js", level: 70 },
+        { name: "Tailwind CSS", level: 80 },
+      ],
+    },
+    {
+      name: "Backend",
+      skills: [
+        { name: "Java", level: 80 },
         { name: "Spring Boot", level: 80 },
+        { name: ".NET", level: 75 },
+        { name: "Node/Express", level: 75 },
       ],
     },
   ]
@@ -234,24 +223,15 @@ const Skills: React.FC<SkillsProps> = () => {
       <HeroSection
         title={
           <>
-            <span className="block">MY</span>
-            <span className="block">AWS CLOUD</span>
-            <span className="block">SKILLS &</span>
-            <span className="block">EXPERIENCE</span>
+            <span className="block">TECH</span>
+            <span className="block">STACK</span>
           </>
         }
         pageType="skills"
         description={
           <div className="mt-4 bg-black/70 backdrop-blur-sm p-4 rounded-lg">
             <p className="text-white/90">
-              I specialize in AWS cloud infrastructure with 4+ years of experience in software development.
-              My core focus is designing robust AWS environments that optimize for performance, 
-              security, and cost-efficiency. At Viking Sasquatch, I've built systems that reduced 
-              operational costs significantly while improving scalability. I've also gained 
-              practical experience implementing AI connections through MCP servers, 
-              resulting in more efficient workflows. My technical skills are built on a 
-              solid foundation of full-stack development, allowing me to create 
-              end-to-end solutions.
+              Technologies I work with, organized by category.
             </p>
           </div>
         }
@@ -269,23 +249,9 @@ const Skills: React.FC<SkillsProps> = () => {
 
       <section className="bg-black py-20">
         <div className="container mx-auto px-4">
-          <div className="mb-16">
-            <InfoSection>
-              Throughout my career at Viking Sasquatch, I've focused on developing expertise
-              in cloud infrastructure while maintaining a practical approach to new technologies
-              like AI integration. My work centers on designing efficient AWS environments
-              that balance performance needs with cost considerations. I've worked extensively
-              with various AWS services and have practical experience connecting AI systems
-              with enterprise tools. Below you'll find details about my technical capabilities,
-              with emphasis on my cloud infrastructure work and other technical skills.
-            </InfoSection>
-          </div>
+          <SectionHeader title="SKILLS BY CATEGORY" color="cyan" />
 
-          <div className="flex flex-col md:flex-row items-start justify-between mb-8">
-            <SectionHeader title="TECHNICAL" color="cyan" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
             {skillCategories.map((category, index) => (
               <div
                 key={index}
@@ -324,61 +290,41 @@ const Skills: React.FC<SkillsProps> = () => {
 
       <section className="bg-dark-light py-20">
         <div className="container mx-auto px-4">
-          <SectionHeader title="TRAINING" color="purple" />
+          <SectionHeader title="CERTIFICATIONS & EDUCATION" color="purple" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
             <div className="bg-dark p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-white">Education</h3>
-
-              <div className="space-y-6">
+              <h3 className="text-2xl font-bold mb-4 text-white">Certifications</h3>
+              <div className="space-y-4">
                 <div className="border-l-4 border-[#653490] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
                     AWS Cloud Architecture
                   </h4>
                   <p className="text-white/70">AWS Training & Certification</p>
                 </div>
-
                 <div className="border-l-4 border-[#653490] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
                     Web Development Bootcamp
                   </h4>
                   <p className="text-white/70">Alkemy Tech</p>
                 </div>
-
-                <div className="border-l-4 border-[#653490] pl-4">
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    Java & POO
-                  </h4>
-                  <p className="text-white/70">FreeCodeCamp</p>
-                </div>
               </div>
             </div>
 
             <div className="bg-dark p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-white">
-                Achievements
-              </h3>
-
-              <div className="space-y-6">
+              <h3 className="text-2xl font-bold mb-4 text-white">Education</h3>
+              <div className="space-y-4">
                 <div className="border-l-4 border-[#00E9C5] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
-                    AWS Cloud Infrastructure Design
+                    Bachelor's in Economics & Administration
                   </h4>
-                  <p className="text-white/70">ECS, Lambda, Cognito, DynamoDB, S3, CloudFormation</p>
+                  <p className="text-white/70">San Jose Institute, 2015</p>
                 </div>
-
                 <div className="border-l-4 border-[#00E9C5] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
-                    Expert in Agile methodology
+                    English Language Certification (C1)
                   </h4>
-                  <p className="text-white/70">Scrum</p>
-                </div>
-
-                <div className="border-l-4 border-[#00E9C5] pl-4">
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    AI Integration Implementation
-                  </h4>
-                  <p className="text-white/70">MCP Servers, Claude, Enterprise Connections</p>
+                  <p className="text-white/70">Cambridge University, 2014</p>
                 </div>
               </div>
             </div>
@@ -389,18 +335,16 @@ const Skills: React.FC<SkillsProps> = () => {
       <section className="bg-gradient-to-r from-[#653490] to-[#00E9C5] py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Ready to Work Together?
+            Need someone with these skills?
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            I'm always interested in new challenges and opportunities to apply
-            my skills. Whether you have a project in mind or just want to
-            connect, reach out!
+            Let's discuss your project.
           </p>
           <a
             href="/contact"
             className="inline-block bg-white text-dark font-semibold px-8 py-3 rounded-md transition-all hover:bg-white/90 hover:scale-105"
           >
-            Contact Me
+            Contact
           </a>
         </div>
       </section>

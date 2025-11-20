@@ -2,11 +2,8 @@ import { useState, useEffect } from "react"
 import { ProjectsProps, Project } from "./types"
 import HeroSection from "@/components/organisms/HeroSection"
 import SectionHeader from "@/components/molecules/SectionHeader"
-import InfoSection from "@/components/molecules/InfoSection"
 import aioniosImage from "@/assets/images/aionios.png"
-import portfolioImage from "@/assets/images/portfolio.png"
 import cryptaraImage from "@/assets/images/cryptara.png"
-import amastoreImage from "@/assets/images/amastore.png"
 import sovngardeImage from "@/assets/images/sovngarde.png"
 import wavecasterImage from "@/assets/images/wavecaster.png"
 import migrationToolImage from "@/assets/images/migration-tool.png"
@@ -41,7 +38,6 @@ import {
   SiConfluence,
 } from "react-icons/si"
 
-// Technology icon mapping function
 const getTechIcon = (tech: string) => {
   switch (tech.toLowerCase()) {
     case ".net":
@@ -116,12 +112,10 @@ const getTechIcon = (tech: string) => {
 }
 
 const Projects: React.FC<ProjectsProps> = () => {
-  // Filter state
   const [activeFilter, setActiveFilter] = useState<string>("all")
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([])
   const [animate, setAnimate] = useState(false)
 
-  // Sample projects data
   const projects: Project[] = [
     {
       id: "mcp-servers",
@@ -132,16 +126,37 @@ const Projects: React.FC<ProjectsProps> = () => {
       technologies: ["Python", "Claude", "MCP", "Jira", "GitHub", "Confluence"],
       featured: true,
       category: "ai",
+      architecture:
+        "Python servers implementing MCP protocol, WebSocket connections, REST API integrations",
+      challenges:
+        "Real-time bidirectional communication, state management across tools, error handling",
+      metrics:
+        "10x faster development workflows, 35% reduction in manual tasks",
     },
     {
       id: "titlescout-etl",
-      title: "TitleScout Migration Tool",
+      title: "Migration Tool",
       description:
         "Enterprise ETL system migrating terabytes of title company data from legacy platforms (RamQuest, ResWare, SoftPro) to unified AWS infrastructure. Built with .NET 6 WPF, transforms disparate SQL schemas into standardized format, handles billions of records with cursor-based pagination and staging tables. Exports via BCP to S3, triggers Lambda for batched RDS import with constraint management.",
       image: migrationToolImage,
-      technologies: [".NET", "AWS", "AWS S3", "AWS Lambda", "AWS RDS", "SQL Server", "BCP", "Bash"],
+      technologies: [
+        ".NET",
+        "AWS",
+        "AWS S3",
+        "AWS Lambda",
+        "AWS RDS",
+        "SQL Server",
+        "BCP",
+        "Bash",
+      ],
       featured: true,
       category: "aws",
+      architecture:
+        "WPF desktop app, SQL Server stored procedures, Lambda functions, S3 staging, RDS targets",
+      challenges:
+        "Terabyte-scale data migration, schema transformation, constraint handling, performance optimization",
+      metrics:
+        "Billions of records processed, 70% faster than previous solution",
     },
     {
       id: "sovngarde",
@@ -154,6 +169,10 @@ const Projects: React.FC<ProjectsProps> = () => {
       liveDemo: "https://amadeodlp.github.io/sovngarde-ui",
       featured: true,
       category: "frontend",
+      architecture:
+        "Nuxt 3 with Vue Composition API, Pinia state management, Tailwind CSS",
+      challenges:
+        "Modern Vue 3 patterns, SSR optimization, responsive gaming aesthetics",
     },
     {
       id: "cryptara",
@@ -166,6 +185,10 @@ const Projects: React.FC<ProjectsProps> = () => {
       github: "https://github.com/amadeodlp/finance-simplified",
       category: "fullstack",
       featured: true,
+      architecture:
+        "React SPA, ASP.NET Core REST API, Ethereum smart contracts, Web3 integration",
+      challenges:
+        "Blockchain integration, wallet connectivity, transaction management, real-time price updates",
     },
     {
       id: "wavecaster",
@@ -177,6 +200,10 @@ const Projects: React.FC<ProjectsProps> = () => {
       github: "https://github.com/amadeodlp/wavecaster",
       category: "fullstack",
       featured: true,
+      architecture:
+        "React frontend, Spring Boot REST API, MySQL database, audio streaming",
+      challenges:
+        "Real-time audio streaming, playlist management, user authentication",
     },
     {
       id: "aionios",
@@ -187,8 +214,11 @@ const Projects: React.FC<ProjectsProps> = () => {
       technologies: ["Java", "Solidity", "React"],
       github: "https://github.com/amadeodlp/aionios-ui",
       category: "fullstack",
+      architecture:
+        "Next.js frontend, Spring Boot backend, Solidity smart contracts, IPFS storage",
+      challenges:
+        "Blockchain time-locking, secure storage, future-proof data retrieval",
     },
-
   ]
 
   const filters = [
@@ -199,10 +229,8 @@ const Projects: React.FC<ProjectsProps> = () => {
     { key: "frontend", label: "Frontend" },
   ]
 
-  // Filter projects based on active filter
   useEffect(() => {
     setAnimate(false)
-
     setTimeout(() => {
       if (activeFilter === "all") {
         setFilteredProjects(projects)
@@ -215,39 +243,21 @@ const Projects: React.FC<ProjectsProps> = () => {
     }, 200)
   }, [activeFilter])
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 0 },
-    },
-  }
-
   return (
     <>
       <HeroSection
         title={
           <>
-            <span className="block">PROJECTS</span>
+            <span className="block">PROJECT</span>
+            <span className="block">CATALOG</span>
           </>
         }
         pageType="projects"
         description={
           <div className="mt-4 bg-black/70 backdrop-blur-sm p-4 rounded-lg">
             <p className="text-white/90">
-              A selection of public projects I've built. Most of my current work is 
-              proprietary, but these demonstrate my approach to different technical challenges.
+              Technical deep-dives into architecture decisions, implementation
+              details, and lessons learned.
             </p>
           </div>
         }
@@ -255,19 +265,8 @@ const Projects: React.FC<ProjectsProps> = () => {
 
       <section className="bg-black py-20">
         <div className="container mx-auto px-4">
-          <div className="mb-16">
-            <InfoSection>
-              At Viking Sasquatch, I work on problems that need different technical approaches. 
-              Some require AWS infrastructure, others need AI integrations, some just need solid 
-              full-stack work. I've built systems ranging from authentication migrations to MCP 
-              servers connecting Claude with GitHub and Jira. The common thread is thinking about 
-              trade-offs before choosing the stack.
-            </InfoSection>
-          </div>
+          <SectionHeader title="FILTER BY CATEGORY" color="blue" />
 
-          <SectionHeader title="PROJECTS" color="blue" />
-
-          {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {filters.map(filter => (
               <button
@@ -284,100 +283,94 @@ const Projects: React.FC<ProjectsProps> = () => {
             ))}
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-16">
             {filteredProjects.map(project => (
               <div
                 key={project.id}
-                className="bg-dark-light/90 rounded-lg overflow-hidden shadow-lg group backdrop-blur-sm"
+                className="bg-dark-light/90 rounded-lg overflow-hidden shadow-lg backdrop-blur-sm"
               >
-                {/* Project Image */}
-                <div className="aspect-video bg-gradient-to-br from-[#653490] to-[#00E9C5] relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Project Info */}
-                <div className="p-6">
-                  <div
-                    className={`flex items-start ${
-                      project.id === "foodprocessor" ||
-                      project.id === "nasa-react"
-                        ? "justify-center"
-                        : "justify-between"
-                    } mb-2`}
-                  >
-                    <h3
-                      className={`text-xl font-bold group-hover:text-[#00E9C5] transition-colors ${
-                        project.id === "foodprocessor" ||
-                        project.id === "nasa-react"
-                          ? "text-center"
-                          : ""
-                      }`}
-                    >
-                      {project.title}
-                    </h3>
-
-                    {project.featured && (
-                      <span className="bg-[#653490]/20 text-[#653490] text-xs px-2 py-1 rounded-full">
-                        Featured
-                      </span>
-                    )}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="aspect-video lg:aspect-auto bg-gradient-to-br from-[#653490] to-[#00E9C5] relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
                   </div>
 
-                  <p
-                    className={`text-white/70 text-sm mb-4 ${
-                      project.id === "foodprocessor" ||
-                      project.id === "nasa-react"
-                        ? "text-center"
-                        : ""
-                    }`}
-                  >
-                    {project.description}
-                  </p>
-
-                  <div
-                    className={`flex ${
-                      project.id === "foodprocessor" ||
-                      project.id === "nasa-react"
-                        ? "justify-center"
-                        : "justify-between"
-                    } items-center`}
-                  >
-                    <div
-                      className={`flex flex-wrap gap-2 ${
-                        project.id === "foodprocessor" ||
-                        project.id === "nasa-react"
-                          ? "justify-center"
-                          : ""
-                      }`}
-                    >
-                      {project.technologies.slice(0, 2).map((tech, index) => (
-                        <span
-                          key={index}
-                          className="bg-dark text-xs px-2 py-1 rounded flex items-center gap-1"
-                        >
-                          <span className="text-base">{getTechIcon(tech)}</span>
-                          <span>{tech}</span>
-                        </span>
-                      ))}
-                      {project.technologies.length > 2 && (
-                        <span className="bg-dark text-xs px-2 py-1 rounded">
-                          +{project.technologies.length - 2}
+                  <div className="p-8">
+                    <div className="flex items-start justify-between mb-4">
+                      <h3 className="text-2xl font-bold text-white">
+                        {project.title}
+                      </h3>
+                      {project.featured && (
+                        <span className="bg-[#653490]/20 text-[#653490] text-xs px-3 py-1 rounded-full">
+                          Featured
                         </span>
                       )}
                     </div>
-                    <div className="flex space-x-3">
+
+                    <p className="text-white/80 mb-6">{project.description}</p>
+
+                    {project.architecture && (
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-[#00E9C5] mb-2">
+                          Architecture
+                        </h4>
+                        <p className="text-white/70 text-sm">
+                          {project.architecture}
+                        </p>
+                      </div>
+                    )}
+
+                    {project.challenges && (
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-[#00E9C5] mb-2">
+                          Key Challenges
+                        </h4>
+                        <p className="text-white/70 text-sm">
+                          {project.challenges}
+                        </p>
+                      </div>
+                    )}
+
+                    {project.metrics && (
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-[#00E9C5] mb-2">
+                          Impact
+                        </h4>
+                        <p className="text-white/70 text-sm">
+                          {project.metrics}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="mb-6">
+                      <h4 className="text-sm font-semibold text-white/60 mb-2">
+                        Tech Stack
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech, index) => (
+                          <span
+                            key={index}
+                            className="bg-dark text-xs px-3 py-1 rounded flex items-center gap-1"
+                          >
+                            <span className="text-base">
+                              {getTechIcon(tech)}
+                            </span>
+                            <span>{tech}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex gap-3">
                       {project.github && (
                         <a
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-white/70 hover:text-white transition-colors"
-                          aria-label={`GitHub repository for ${project.title}`}
+                          className="inline-flex items-center gap-2 bg-dark px-4 py-2 rounded text-white/80 hover:text-white transition-colors"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -388,6 +381,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                           >
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                           </svg>
+                          View Code
                         </a>
                       )}
 
@@ -396,8 +390,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                           href={project.liveDemo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-white/70 hover:text-white transition-colors"
-                          aria-label={`Live demo for ${project.title}`}
+                          className="inline-flex items-center gap-2 bg-[#653490] px-4 py-2 rounded text-white hover:bg-[#7e4aaa] transition-colors"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -414,6 +407,7 @@ const Projects: React.FC<ProjectsProps> = () => {
                             <polyline points="15 3 21 3 21 9"></polyline>
                             <line x1="10" y1="14" x2="21" y2="3"></line>
                           </svg>
+                          Live Demo
                         </a>
                       )}
                     </div>
@@ -425,54 +419,19 @@ const Projects: React.FC<ProjectsProps> = () => {
         </div>
       </section>
 
-      <section className="bg-dark-light py-20">
-        <div className="container mx-auto px-4">
-          <SectionHeader title="TECHNOLOGIES" color="purple" />
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
-            {[
-              "AWS",
-              "Claude",
-              "AWS Lambda",
-              "AWS Cognito",
-              "AWS DynamoDB",
-              "AWS S3",
-              "Docker",
-              "React",
-              "Java",
-              ".NET",
-              "TypeScript",
-              "Spring Boot",
-            ].map((tech, index) => (
-              <div
-                key={index}
-                className="bg-dark/80 p-4 rounded-lg shadow-lg backdrop-blur-sm cursor-pointer transition-all hover:shadow-xl hover:shadow-[#00E9C5]/10 border border-transparent hover:border-[#00E9C5]/20"
-              >
-                <div className="mb-2 flex justify-center">
-                  <span className="text-4xl">{getTechIcon(tech)}</span>
-                </div>
-                <div className="text-white font-medium">{tech}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-gradient-to-r from-[#653490] to-[#00E9C5] py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Looking for AWS cloud expertise with AI integration experience?
+            Want to discuss a project?
           </h2>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            I design robust cloud infrastructure and have practical experience connecting 
-            AI systems with enterprise tools. If you're looking to optimize your AWS environment 
-            or streamline workflows with intelligent automation, let's connect!
+            I'm open to new opportunities and interesting technical challenges.
           </p>
           <a
             href="/contact"
-            className="inline-block bg-white text-dark font-semibold px-8 py-3 rounded-md transition-all hover:bg-white/90 hover:scale-105 hover:shadow-lg active:translate-y-0.5"
+            className="inline-block bg-white text-dark font-semibold px-8 py-3 rounded-md transition-all hover:bg-white/90 hover:scale-105 hover:shadow-lg"
           >
-            Contact Me
+            Get in touch
           </a>
         </div>
       </section>

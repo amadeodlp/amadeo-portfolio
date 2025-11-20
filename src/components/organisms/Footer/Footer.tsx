@@ -43,11 +43,7 @@ const Footer: React.FC<FooterProps> = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Amadeo de la Peña</h3>
-              <p className="text-white/70 mb-4">
-                Always learning the newest technologies, or the ones that you
-                need me to learn.
-              </p>
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mt-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
@@ -195,7 +191,7 @@ const Footer: React.FC<FooterProps> = () => {
 
       {/* Copyright Bar */}
       <div className="bg-[#502a72] py-4">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-cemter items-center">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center">
           <div className="text-white/70 text-sm mb-2 md:mb-0">
             © {year} Amadeo de la Peña - All Rights Reserved
           </div>
