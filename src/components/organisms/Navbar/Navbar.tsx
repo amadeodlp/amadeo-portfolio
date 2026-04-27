@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { NavbarProps } from './types'
-import ContactButton from '@/components/atoms/ContactButton'
 
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -28,8 +26,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <NavLink
-          to="/"
+        <button
+          onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
           className="text-2xl font-bold text-white flex items-center"
         >
           <motion.div
@@ -39,63 +37,26 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           >
             {"<Amadeo />"}
           </motion.div>
-        </NavLink>
+        </button>
 
         {/* Desktop Navigation */}
         <div className="flex items-center">
-          <nav className="hidden md:flex space-x-6 mr-6">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/skills"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-            >
-              Skills
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/experience"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-            >
-              Experience
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-            >
-              About
-            </NavLink>
-            <NavLink to="/contact">Contact</NavLink>
-          </nav>
+        <nav className="hidden md:flex space-x-6 mr-6">
+        {[
+        { label: 'Work', id: 'addie' },
+        { label: 'Migration', id: 'migration' },
+        { label: 'Projects', id: 'projects' },
+        { label: 'Contact', id: 'contact' },
+        ].map(({ label, id }) => (
+        <button
+            key={id}
+          onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-white/80 hover:text-white transition-colors"
+          >
+          {label}
+        </button>
+        ))}
+        </nav>
         </div>
 
         {/* Mobile Menu Button */}
@@ -140,68 +101,23 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           className="md:hidden bg-dark"
         >
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/skills"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Skills
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="/experience"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Experience
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-white font-medium"
-                  : "text-white/80 hover:text-white transition-colors"
-              }
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className="bg-red-600 text-white font-medium uppercase tracking-wide px-4 py-2 inline-block transition-colors hover:bg-red-700 w-full text-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </NavLink>
+            {[
+              { label: 'Work', id: 'addie' },
+              { label: 'Migration', id: 'migration' },
+              { label: 'Projects', id: 'projects' },
+              { label: 'Contact', id: 'contact' },
+            ].map(({ label, id }) => (
+              <button
+                key={id}
+                onClick={() => {
+                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+                  setIsMenuOpen(false)
+                }}
+                className="text-white/80 hover:text-white transition-colors text-left"
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </motion.div>
       )}

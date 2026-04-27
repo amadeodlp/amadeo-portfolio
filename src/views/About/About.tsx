@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { AboutProps } from "./types"
 import HeroSection from "@/components/organisms/HeroSection"
-import timoImage from "@/assets/images/timo.JPEG"
 
 const About: React.FC<AboutProps> = () => {
   return (
@@ -29,29 +28,30 @@ const About: React.FC<AboutProps> = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-white/80 text-lg leading-relaxed">
             <p>
-              Last 5 years I went on a path of discovery and learning of
-              software development that led me to integrate the last dev squad
-              senioring before the rise of LLMs. When it happened, I was already
-              deploying to prod to 50K users on Keenvil, a local startup
-              committed to simplifying everyone's lives with access security
-              automation.
+              I'm Amadeo de la Peña, a full-stack engineer from Buenos Aires.
+              I got serious about software in 2021 and moved fast — within two years
+              I was shipping to 50,000 users in production at Keenvil, building
+              real-time access control flows in React Native.
             </p>
             <p className="mt-6">
-              The new digital revolution had me as a protagonist early on: in
-              Viking Sasquatch we were one of the first companies to implement
-              model context protocol servers uniting LLMs to Windows filesystem
-              and enterprise services such as Github, Jira and Figma. I also
-              here became a full blown full stack engineer, mastering the build
-              of ETL systems via AWS pipelines, migrating identity systems, and
-              even creating a custom component library that unified design of
-              our three signature 24|7 Fees apps.
+              At Viking Sasquatch I went deeper: sole owner of a 100+ TB cloud
+              migration pipeline for 30+ enterprise clients, an Auth0-to-Cognito
+              migration across 16 microservices, and Python MCP servers connecting
+              Claude to Jira, Confluence, and GitHub before commercial alternatives
+              existed. I own things end to end — from architecture decisions to
+              production deployments.
             </p>
             <p className="mt-6">
-              Beyond the technical work, I value simplicity in solutions and
-              directness in communication. I believe the best technology choices
-              come from understanding the actual problem, not from chasing
-              trends. When I'm not coding, you'll find me playing drums or
-              spending time with my dog.
+              Outside of work I produce music and built Addie — an open-source
+              AI assistant for Ableton Live that gives any LLM real-time control
+              over your DAW session. It's the kind of project that sits at the
+              intersection of everything I care about: clean architecture,
+              local-first design, and tools that actually change how you work.
+            </p>
+            <p className="mt-6">
+              I value simplicity in solutions and directness in communication.
+              The best technical decisions come from understanding the actual
+              problem — not from chasing trends.
             </p>
           </div>
 
@@ -61,13 +61,6 @@ const About: React.FC<AboutProps> = () => {
             {/* Timo Image Box */}
             <div className="mb-6 bg-dark/50 p-4 rounded-lg border border-[#00E9C5]/20">
               <div className="flex flex-col md:flex-row items-center gap-4">
-                <div className="w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
-                  <img
-                    src={timoImage}
-                    alt="Timo"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
                 <div className="text-center md:text-left">
                   <p className="text-white/90 font-medium mb-1">
                     Mention Timo for faster reply!

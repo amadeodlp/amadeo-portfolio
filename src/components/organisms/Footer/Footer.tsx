@@ -1,10 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FooterProps } from './types';
+import timoImg from '@/assets/images/timo.JPEG';
 
 const Footer: React.FC<FooterProps> = () => {
   const year = new Date().getFullYear();
-  
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const navLinks = [
+    { label: 'Work', id: 'addie' },
+    { label: 'Migration', id: 'migration' },
+    { label: 'Projects', id: 'projects' },
+    { label: 'Contact', id: 'contact' },
+  ]
+
   const socialLinks = [
     {
       name: 'GitHub',
@@ -36,14 +47,17 @@ const Footer: React.FC<FooterProps> = () => {
   ];
 
   return (
-    <footer className="bg-[#653490] text-white relative z-10">
+    <footer className="relative z-10">
       {/* Main Footer */}
       <div className="bg-dark py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {/* Brand + socials */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Amadeo de la Peña</h3>
-              <div className="flex space-x-4 mt-4">
+              <h3 className="text-xl font-bold text-white mb-2">Amadeo de la Peña</h3>
+              <p className="text-white/40 text-sm mb-4">Buenos Aires, Argentina</p>
+              <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
@@ -59,141 +73,48 @@ const Footer: React.FC<FooterProps> = () => {
               </div>
             </div>
 
+            {/* Navigation */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Navigation</h3>
+              <h3 className="text-sm font-mono uppercase tracking-widest text-white/40 mb-4">Navigation</h3>
               <ul className="space-y-2">
-                <li>
-                  <Link
-                    to="/"
-                    className="text-white/70 hover:text-white transition-colors"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/skills"
-                    className="text-white/70 hover:text-white transition-colors"
-                  >
-                    Skills
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/projects"
-                    className="text-white/70 hover:text-white transition-colors"
-                  >
-                    Projects
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    className="text-white/70 hover:text-white transition-colors"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/contact"
-                    className="text-white/70 hover:text-white transition-colors"
-                  >
-                    Contact
-                  </Link>
-                </li>
+                {navLinks.map(({ label, id }) => (
+                  <li key={id}>
+                    <button
+                      onClick={() => scrollTo(id)}
+                      className="text-white/70 hover:text-white transition-colors text-sm"
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-xl font-bold mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2 text-[#00E9C5] mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span className="text-white/70">amadeodlp@hotmail.com</span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2 text-[#00E9C5] mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  <span className="text-white/70">+54 11-2785-2352</span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2 text-[#00E9C5] mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <span className="text-white/70">Buenos Aires, Argentina</span>
-                </li>
-              </ul>
+            {/* Timo */}
+            <div className="flex flex-col items-start">
+              <h3 className="text-sm font-mono uppercase tracking-widest text-white/40 mb-4">A note</h3>
+              <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl p-4">
+                <img
+                  src={timoImg}
+                  alt="Timo"
+                  className="w-20 h-20 rounded-full object-cover flex-shrink-0 border border-white/20"
+                />
+                <div>
+                  <p className="text-white text-sm font-medium mb-0.5">Mention Timo</p>
+                  <p className="text-white/50 text-xs leading-relaxed">for a faster reply 🐶</p>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-xl font-bold mb-4">Schedule</h3>
-              <ul className="space-y-2">
-                <li className="flex justify-between">
-                  <span className="text-white/70">Mon - Fri</span>
-                  <span className="text-white">09 AM - 8 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-white/70">Saturday</span>
-                  <span className="text-white">09 AM - 1 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-white/70">Sunday</span>
-                  <span className="text-white">Closed</span>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Copyright Bar */}
       <div className="bg-[#502a72] py-4">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center">
-          <div className="text-white/70 text-sm mb-2 md:mb-0">
-            © {year} Amadeo de la Peña - All Rights Reserved
+        <div className="container mx-auto px-4 flex justify-center">
+          <div className="text-white/70 text-sm">
+            © {year} Amadeo de la Peña — All Rights Reserved
           </div>
         </div>
       </div>

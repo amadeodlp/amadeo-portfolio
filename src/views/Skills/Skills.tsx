@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
-import { useAnimation } from "framer-motion"
-import { useInView } from 'react-intersection-observer';
+import React from "react"
 import { SkillsProps } from './types';
 import HeroSection from '@/components/organisms/HeroSection';
 import SectionHeader from '@/components/molecules/SectionHeader';
@@ -144,18 +142,6 @@ const getSkillIcon = (skillName: string) => {
 }
 
 const Skills: React.FC<SkillsProps> = () => {
-  const controls = useAnimation()
-  const [ref, inView] = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  })
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible")
-    }
-  }, [controls, inView])
-
   const techIconsList = [
     FaReact,
     SiTypescript,
@@ -178,42 +164,39 @@ const Skills: React.FC<SkillsProps> = () => {
     {
       name: "Cloud & Infrastructure",
       skills: [
-        { name: "AWS ECS & EC2", level: 90 },
-        { name: "AWS Lambda", level: 90 },
-        { name: "AWS Cognito", level: 90 },
-        { name: "AWS DynamoDB", level: 90 },
-        { name: "AWS S3", level: 85 },
-        { name: "Docker", level: 80 },
+        "AWS (ECS, EC2, Lambda, S3, DynamoDB, RDS, IAM, CloudWatch, SSM)",
+        "Auth: AWS Cognito, OAuth/OIDC, SAML (Okta)",
+        "Docker",
+        "CI/CD: GitHub Actions",
       ],
     },
     {
       name: "AI & Integration",
       skills: [
-        { name: "Claude", level: 80 },
-        { name: "MCP Servers", level: 80 },
-        { name: "API Integration", level: 85 },
-        { name: "Apache Camel", level: 80 },
-        { name: "Auth0", level: 80 },
+        "LLM integration (multi-provider, OpenAI-compatible APIs)",
+        "MCP protocol servers (Jira / GitHub / Confluence)",
+        "RAG (local retrieval, embedding pipelines)",
+        "API integrations (REST, Webhooks)",
+        "Auth0 (migration experience)",
       ],
     },
     {
       name: "Frontend",
       skills: [
-        { name: "React & React Native", level: 85 },
-        { name: "TypeScript", level: 85 },
-        { name: "JavaScript", level: 85 },
-        { name: "Next.js", level: 75 },
-        { name: "Vue & Nuxt.js", level: 70 },
-        { name: "Tailwind CSS", level: 80 },
+        "React, React Native, TypeScript, JavaScript",
+        "Next.js, Vue, Nuxt",
+        "Tailwind CSS",
+        "Redux Toolkit / state management",
+        "Storybook (design systems)",
       ],
     },
     {
       name: "Backend",
       skills: [
-        { name: "Java", level: 80 },
-        { name: "Spring Boot", level: 80 },
-        { name: ".NET", level: 75 },
-        { name: "Node/Express", level: 75 },
+        "Node.js (Express), WebSockets",
+        "Java (Spring Boot)",
+        "C# (.NET)",
+        "SQL (SQL Server, MySQL)",
       ],
     },
   ]
@@ -261,27 +244,14 @@ const Skills: React.FC<SkillsProps> = () => {
                   {category.name}
                 </h3>
 
-                <div className="space-y-5">
+                <ul className="space-y-3 text-white/80">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-white flex items-center">
-                          {getSkillIcon(skill.name)}
-                          {skill.name}
-                        </span>
-                        <span className="text-white/60 text-sm">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="w-full h-2 bg-dark rounded-full overflow-hidden">
-                        <div
-                          className="h-full bg-gradient-to-r from-[#653490] to-[#00E9C5]"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
+                    <li key={skillIndex} className="flex items-start">
+                      <span className="mt-1 mr-3 h-2 w-2 rounded-full bg-[#00E9C5] flex-shrink-0" />
+                      <span>{skill}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             ))}
           </div>
@@ -298,9 +268,9 @@ const Skills: React.FC<SkillsProps> = () => {
               <div className="space-y-4">
                 <div className="border-l-4 border-[#653490] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">
-                    AWS Cloud Architecture
+                    AWS Solutions Architect Associate
                   </h4>
-                  <p className="text-white/70">AWS Training & Certification</p>
+                  <p className="text-white/70">In progress — AWS Training & Certification</p>
                 </div>
                 <div className="border-l-4 border-[#653490] pl-4">
                   <h4 className="text-lg font-semibold text-white mb-1">

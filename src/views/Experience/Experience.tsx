@@ -61,7 +61,7 @@ const Experience: React.FC<ExperienceProps> = () => {
       role: "Full-Stack Developer",
       period: "August 2023 - Present",
       description:
-        "AWS infrastructure, AI integrations, cross-platform services. Auth migration from Auth0 to Cognito (70% cost reduction). MCP servers connecting Claude with GitHub and Jira (10x development speed). ETL systems for title company data.",
+        "Designed and owned end-to-end cloud migration pipeline for 30+ on-prem SQL Server clients (10–100 TB per migration). Architected around S3 presigned URLs to eliminate VPN requirements, with EC2 in the same VPC as RDS handling bulk insertion and Lambda+SSM orchestrating the handoff. Also led Auth0→Cognito migration across 16 microservices with Okta SAML SSO, and built Python MCP servers connecting Claude to Jira, Confluence, and GitHub before commercial alternatives existed.",
       image: vikingSasquatchImage,
       technologies: [
         "AWS",
@@ -74,12 +74,12 @@ const Experience: React.FC<ExperienceProps> = () => {
         "TypeScript",
       ],
       responsibilities: [
-        "Designed AWS infrastructure (ECS, Lambda, Cognito, DynamoDB, S3)",
-        "Built MCP servers for Claude AI integration with GitHub and Jira",
-        "Migrated authentication from Auth0 to AWS Cognito (70% cost savings)",
-        "Created cross-platform interchange service with Java and Spring Boot",
-        "Developed reusable component libraries and design systems",
-      ],
+          "Designed and owned 100+ TB ETL migration pipeline: S3 presigned URLs, EC2-to-RDS bulk insertion over private VPC, Lambda+SSM orchestration",
+          "Migrated auth across 16 microservices from Auth0 to AWS Cognito with Okta SAML SSO — zero disruption to existing users, fully reversible per-org cutover",
+          "Built Python MCP servers for Jira, Confluence, and GitHub from scratch against the MCP spec in December 2024, before commercial alternatives existed",
+          "Built internal component library (TypeScript, TailwindCSS, Storybook) replacing 3 separate ad-hoc libraries across 3 products",
+          "Applied least privilege IAM across all systems, configured CloudWatch logging and S3 access policies",
+        ],
     },
     {
       id: "firstclose",
@@ -103,7 +103,7 @@ const Experience: React.FC<ExperienceProps> = () => {
       role: "React Developer",
       period: "March 2022 - December 2022",
       description:
-        "Web and mobile applications with React and React Native. iOS and Android maintenance.",
+        "Built WebSocket-driven Twilio call flow for real-time resident approval within the guard-side access control app — guard app fired an automatic resident call upon entry request, resident could approve, reject, or escalate from their device. Also built the visitor invitation webapp from scratch (React, mobile-first): visitors pre-registered via WhatsApp link and were automatically recognized at arrival.",
       image: keenvilImage,
       technologies: [
         "React",
@@ -113,11 +113,10 @@ const Experience: React.FC<ExperienceProps> = () => {
         "Twilio",
       ],
       responsibilities: [
-        "Built responsive web and mobile applications",
-        "Maintained iOS and Android apps via Xcode and Android Studio",
-        "Integrated Twilio for communication features",
-        "Focused on cross-platform compatibility",
-      ],
+          "Owned end-to-end implementation of WebSocket-driven Twilio call flow for guard-side visitor approval",
+          "Built visitor invitation webapp from scratch — WhatsApp invite link, mobile-first registration, automatic guard recognition at arrival",
+          "Both features shipped within a three-app system serving ~50,000 users across 10 private communities",
+        ],
     },
   ];
 
