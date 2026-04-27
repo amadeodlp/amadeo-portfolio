@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0a0a0a"/>
-  <text
-    x="50%"
-    y="52%"
-    dominant-baseline="middle"
-    text-anchor="middle"
-    font-family="monospace"
-    font-size="13"
-    font-weight="bold"
-    fill="#00E9C5"
-  >A/</text>
+  <rect width="32" height="32" rx="4" fill="#0a0a0a"/>
+  <!-- Sharp geometric A: two diagonal strokes + crossbar, no curves -->
+  <!-- Left stroke -->
+  <polygon points="16,4 11,28 14,28 16,20 18,28 21,28" fill="#00E9C5"/>
+  <!-- Left leg -->
+  <polygon points="16,4 8,28 11,28 16,10" fill="#00E9C5"/>
+  <!-- Right leg -->
+  <polygon points="16,4 24,28 21,28 16,10" fill="#00E9C5"/>
+  <!-- Crossbar -->
+  <rect x="11.5" y="18" width="9" height="2.2" fill="#00E9C5"/>
 </svg>
